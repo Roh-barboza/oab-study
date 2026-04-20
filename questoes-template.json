@@ -1,0 +1,845 @@
+{
+  "metadata": {
+    "version": "2.0",
+    "total_questoes": 64,
+    "materia_ids": ["constitucional", "processpenal", "civil", "trabalho", "administrativo", "consumidor", "empresarial", "humanosintl"],
+    "questoes_por_materia": 8,
+    "id_range": [33, 96],
+    "gerado_por": "Perplexity AI",
+    "data": "2026-04-20"
+  },
+  "questoes": [
+    {
+      "id": 33,
+      "materia": "constitucional",
+      "enunciado": "Qual remédio constitucional é apropriado para proteger informações pessoais armazenadas em banco de dados governamental?",
+      "alternativas": [
+        "A) Habeas Corpus",
+        "B) Habeas Data",
+        "C) Mandado de Segurança",
+        "D) Mandado de Injunção"
+      ],
+      "gabarito": 1,
+      "explicacao": "Habeas Data (art. 5º, LXXII CF) é o remédio apropriado para acessar, corrigir ou deletar informações pessoais em bancos de dados públicos ou privados."
+    },
+    {
+      "id": 34,
+      "materia": "constitucional",
+      "enunciado": "Qual é o fundamento constitucional para a aplicação de direitos fundamentais entre particulares?",
+      "alternativas": [
+        "A) Eficácia vertical",
+        "B) Eficácia horizontal",
+        "C) Aplicação mediata",
+        "D) Inaplicabilidade entre particulares"
+      ],
+      "gabarito": 1,
+      "explicacao": "A eficácia horizontal permite que direitos fundamentais sejam aplicados nas relações entre particulares, não apenas nas relações com o Estado."
+    },
+    {
+      "id": 35,
+      "materia": "constitucional",
+      "enunciado": "Qual órgão é responsável por guardar a Constituição Federal e fazer o controle concentrado de constitucionalidade?",
+      "alternativas": [
+        "A) Superior Tribunal de Justiça",
+        "B) Tribunal Superior do Trabalho",
+        "C) Supremo Tribunal Federal",
+        "D) Conselho Nacional de Justiça"
+      ],
+      "gabarito": 2,
+      "explicacao": "O Supremo Tribunal Federal (STF) é o guardião da Constituição Federal (art. 102 CF) e responsável pelo controle concentrado de constitucionalidade."
+    },
+    {
+      "id": 36,
+      "materia": "constitucional",
+      "enunciado": "Qual é a consequência de uma violação de cláusula pétrea constitucional?",
+      "alternativas": [
+        "A) Rejeição automática pela Câmara dos Deputados",
+        "B) Nulidade absoluta e insanável",
+        "C) Revisão pelo Senado Federal",
+        "D) Aprovação por voto de desempate do Presidente"
+      ],
+      "gabarito": 1,
+      "explicacao": "As cláusulas pétreas (art. 60, § 4º CF) não podem ser abolidas nem por emenda constitucional, resultando em nulidade absoluta qualquer tentativa."
+    },
+    {
+      "id": 37,
+      "materia": "constitucional",
+      "enunciado": "Qual é o mandato do Presidente da República segundo a Constituição Federal de 1988?",
+      "alternativas": [
+        "A) 3 anos, com possibilidade de três reeleições",
+        "B) 4 anos, com possibilidade de uma reeleição",
+        "C) 5 anos, sem possibilidade de reeleição",
+        "D) 6 anos, com possibilidade de uma reeleição"
+      ],
+      "gabarito": 1,
+      "explicacao": "O Presidente da República tem mandato de 4 anos com possibilidade de uma reeleição (art. 82 CF), totalizando até 8 anos de mandato."
+    },
+    {
+      "id": 38,
+      "materia": "constitucional",
+      "enunciado": "Qual é o número de senadores que cada Estado envia para o Senado Federal?",
+      "alternativas": [
+        "A) 1 senador",
+        "B) 2 senadores",
+        "C) 3 senadores",
+        "D) 4 senadores"
+      ],
+      "gabarito": 2,
+      "explicacao": "Cada Estado envia 3 senadores para o Senado Federal com mandato de 8 anos (art. 46 CF), renovado alternadamente a cada 4 anos."
+    },
+    {
+      "id": 39,
+      "materia": "constitucional",
+      "enunciado": "Qual remédio constitucional protege direito líquido e certo não amparado por HC ou HD?",
+      "alternativas": [
+        "A) Ação Popular",
+        "B) Mandado de Injunção",
+        "C) Mandado de Segurança",
+        "D) Habeas Corpus"
+      ],
+      "gabarito": 2,
+      "explicacao": "Mandado de Segurança (MS) protege direito líquido e certo (que se prova apenas com documentos) não amparado por HC ou HD (art. 5º, LXIX CF)."
+    },
+    {
+      "id": 40,
+      "materia": "constitucional",
+      "enunciado": "O controle difuso de constitucionalidade pode ser exercido por qual instância?",
+      "alternativas": [
+        "A) Apenas pelo STF",
+        "B) Apenas pela Câmara dos Deputados",
+        "C) Por qualquer juiz ou tribunal",
+        "D) Apenas pelo Superior Tribunal de Justiça"
+      ],
+      "gabarito": 2,
+      "explicacao": "Controle difuso pode ser exercido por qualquer juiz ou tribunal, com efeitos inter partes (entre as partes do processo) conforme art. 97 CF."
+    },
+    {
+      "id": 41,
+      "materia": "processpenal",
+      "enunciado": "Qual é o prazo máximo para conclusão do inquérito policial quando o acusado está preso na Justiça Estadual?",
+      "alternativas": [
+        "A) 5 dias",
+        "B) 10 dias",
+        "C) 15 dias",
+        "D) 30 dias"
+      ],
+      "gabarito": 1,
+      "explicacao": "O prazo máximo para conclusão do inquérito policial é 10 dias quando o acusado está preso na Justiça Estadual (art. 10 CPP)."
+    },
+    {
+      "id": 42,
+      "materia": "processpenal",
+      "enunciado": "O que caracteriza um flagrante provocado?",
+      "alternativas": [
+        "A) Quando a polícia filma o crime",
+        "B) Quando alguém induz outrem a praticar o crime para poder prendê-lo",
+        "C) Quando há câmeras de vigilância no local",
+        "D) Quando há testemunhas do crime"
+      ],
+      "gabarito": 1,
+      "explicacao": "Flagrante provocado ocorre quando alguém (geralmente policial) induz o agente a praticar o crime para poder prendê-lo, sendo INVÁLIDO."
+    },
+    {
+      "id": 43,
+      "materia": "processpenal",
+      "enunciado": "Qual é o prazo para decadência da ação penal privada?",
+      "alternativas": [
+        "A) 3 meses",
+        "B) 6 meses",
+        "C) 1 ano",
+        "D) 2 anos"
+      ],
+      "gabarito": 1,
+      "explicacao": "O prazo de decadência da ação penal privada é 6 meses contados da data do crime ou do conhecimento oficial dele (art. 103 CPP)."
+    },
+    {
+      "id": 44,
+      "materia": "processpenal",
+      "enunciado": "Qual é a natureza jurídica da prisão preventiva?",
+      "alternativas": [
+        "A) Cautelar obrigatória",
+        "B) Pena antecipada",
+        "C) Medida cautelar pessoal",
+        "D) Pena alternativa"
+      ],
+      "gabarito": 2,
+      "explicacao": "Prisão preventiva é medida cautelar pessoal, decretada pelo juiz quando necessário garantir a ordem pública, instrução processual ou aplicação da lei penal."
+    },
+    {
+      "id": 45,
+      "materia": "processpenal",
+      "enunciado": "Qual é o crime de competência do Júri segundo a Constituição Federal?",
+      "alternativas": [
+        "A) Crimes dolosos contra a vida (homicídio, latrocínio)",
+        "B) Crimes contra o patrimônio",
+        "C) Crimes contra a honra",
+        "D) Todos os crimes dolosos"
+      ],
+      "gabarito": 0,
+      "explicacao": "O Júri tem competência para julgar crimes dolosos contra a vida: homicídio, indução/instigação/auxílio ao suicídio, infanticídio, latrocínio (art. 5º XXXVIII CF)."
+    },
+    {
+      "id": 46,
+      "materia": "processpenal",
+      "enunciado": "Qual é a principal característica do inquérito policial?",
+      "alternativas": [
+        "A) É judicial e pode condenar",
+        "B) É inquisitivo e não garante direito de defesa",
+        "C) É público e todos podem acompanhar",
+        "D) É obrigatório para todos os crimes"
+      ],
+      "gabarito": 1,
+      "explicacao": "Inquérito policial é inquisitivo (sem direito de defesa), sigiloso, oficial e indisponível, servindo apenas para preparar a ação penal."
+    },
+    {
+      "id": 47,
+      "materia": "processpenal",
+      "enunciado": "O que é teoria dos frutos da árvore envenenada no processo penal?",
+      "alternativas": [
+        "A) Prova ilícita contamina todas as provas dela originadas",
+        "B) O juiz pode usar prova ilícita em último caso",
+        "C) Provas ilícitas são válidas se colhidas por boa-fé",
+        "D) Crimes ambientais contaminam outras investigações"
+      ],
+      "gabarito": 0,
+      "explicacao": "Frutos da árvore envenenada: prova ilícita contamina todas as provas dela originadas, tornando-as também inadmissíveis (teoria amplamente aceita no Brasil)."
+    },
+    {
+      "id": 48,
+      "materia": "processpenal",
+      "enunciado": "Qual é o requisito para decretação de prisão temporária em crime comum?",
+      "alternativas": [
+        "A) Qualquer crime",
+        "B) Crimes graves com pena máxima superior a 1 ano",
+        "C) Apenas crimes hediondos",
+        "D) Crimes dolosos com pena máxima superior a 4 anos"
+      ],
+      "gabarito": 1,
+      "explicacao": "Prisão temporária em crime comum exige pena máxima superior a 1 ano, com prazo máximo de 5 dias prorrogáveis por igual período (Lei 7960/89)."
+    },
+    {
+      "id": 49,
+      "materia": "civil",
+      "enunciado": "Qual é a idade de aquisição de capacidade civil plena?",
+      "alternativas": [
+        "A) 14 anos",
+        "B) 16 anos",
+        "C) 18 anos",
+        "D) 21 anos"
+      ],
+      "gabarito": 2,
+      "explicacao": "A capacidade civil plena é adquirida aos 18 anos (art. 5º CC), quando a pessoa deixa de ser relativamente incapaz."
+    },
+    {
+      "id": 50,
+      "materia": "civil",
+      "enunciado": "Qual é o prazo geral de prescrição para ações de reparação de danos?",
+      "alternativas": [
+        "A) 1 ano",
+        "B) 3 anos",
+        "C) 5 anos",
+        "D) 10 anos"
+      ],
+      "gabarito": 1,
+      "explicacao": "O prazo geral de prescrição para ações de reparação de danos é 3 anos contados do evento danoso ou de sua constatação (art. 206, § 3º, V CC)."
+    },
+    {
+      "id": 51,
+      "materia": "civil",
+      "enunciado": "Qual é a diferença fundamental entre prescrição e decadência?",
+      "alternativas": [
+        "A) Prescrição suspende e decadência não",
+        "B) Decadência suspende e prescrição não",
+        "C) Ambas são iguais",
+        "D) Prescrição extingue a ação, decadência extingue o direito"
+      ],
+      "gabarito": 3,
+      "explicacao": "Prescrição extingue a ação (pode ser interrompida), enquanto decadência extingue o direito material (não se suspende), art. 189 e 207 CC."
+    },
+    {
+      "id": 52,
+      "materia": "civil",
+      "enunciado": "Qual é a natureza da responsabilidade civil baseada no risco?",
+      "alternativas": [
+        "A) Subjetiva",
+        "B) Objetiva",
+        "C) Contratual",
+        "D) Administrativa"
+      ],
+      "gabarito": 1,
+      "explicacao": "Responsabilidade baseada no risco é objetiva, independente de dolo ou culpa, exigindo apenas o dano e o nexo causal (art. 927, parágrafo único CC)."
+    },
+    {
+      "id": 53,
+      "materia": "civil",
+      "enunciado": "Qual é a definição legal de união estável segundo o Código Civil?",
+      "alternativas": [
+        "A) Convivência por período mínimo de 10 anos",
+        "B) Convivência pública, contínua e duradoura com intenção de constituir família",
+        "C) Casamento informal sem registro",
+        "D) Qualquer relacionamento amoroso de duração indeterminada"
+      ],
+      "gabarito": 1,
+      "explicacao": "União estável é convivência pública, contínua e duradoura, entre um homem e uma mulher, com intenção de constituir família (art. 1.723 CC)."
+    },
+    {
+      "id": 54,
+      "materia": "civil",
+      "enunciado": "Qual é a parte do patrimônio que deve ser reservada aos herdeiros necessários?",
+      "alternativas": [
+        "A) 25%",
+        "B) 33%",
+        "C) 50%",
+        "D) 75%"
+      ],
+      "gabarito": 2,
+      "explicacao": "A legítima (quota hereditária destinada aos herdeiros necessários) é de 50% do patrimônio (art. 1.846 CC)."
+    },
+    {
+      "id": 55,
+      "materia": "civil",
+      "enunciado": "Quem são os herdeiros necessários segundo o Código Civil?",
+      "alternativas": [
+        "A) Cônjuge e amigos",
+        "B) Descendentes, ascendentes e cônjuge",
+        "C) Apenas os descendentes",
+        "D) O Estado e instituições de caridade"
+      ],
+      "gabarito": 1,
+      "explicacao": "Herdeiros necessários são descendentes, ascendentes e cônjuge, que recebem obrigatoriamente a metade do patrimônio (art. 1.845 CC)."
+    },
+    {
+      "id": 56,
+      "materia": "civil",
+      "enunciado": "Qual é a definição de responsabilidade civil subjetiva?",
+      "alternativas": [
+        "A) Baseada no risco criado",
+        "B) Baseada em dolo ou culpa do agente",
+        "C) Independente de qualquer análise",
+        "D) Sempre aplicável a profissionais"
+      ],
+      "gabarito": 1,
+      "explicacao": "Responsabilidade civil subjetiva exige comprovação de dolo (intenção) ou culpa (negligência, imprudência, imperícia) do agente (art. 186 CC)."
+    },
+    {
+      "id": 57,
+      "materia": "trabalho",
+      "enunciado": "Qual é a jornada máxima legal de trabalho segundo a CLT?",
+      "alternativas": [
+        "A) 40 horas semanais",
+        "B) 44 horas semanais",
+        "C) 48 horas semanais",
+        "D) 50 horas semanais"
+      ],
+      "gabarito": 1,
+      "explicacao": "A jornada máxima legal é 44 horas semanais, distribuídas em no máximo 8 horas diárias (art. 58 CLT)."
+    },
+    {
+      "id": 58,
+      "materia": "trabalho",
+      "enunciado": "Qual é o adicional mínimo para hora extra segundo a CLT?",
+      "alternativas": [
+        "A) 20%",
+        "B) 30%",
+        "C) 50%",
+        "D) 100%"
+      ],
+      "gabarito": 2,
+      "explicacao": "O adicional mínimo para hora extra é 50% do valor da hora normal (art. 59 CLT), podendo as convenções coletivas preverem percentual maior."
+    },
+    {
+      "id": 59,
+      "materia": "trabalho",
+      "enunciado": "Qual é o percentual de FGTS que o empregador deve depositar mensalmente?",
+      "alternativas": [
+        "A) 5%",
+        "B) 8%",
+        "C) 10%",
+        "D) 15%"
+      ],
+      "gabarito": 1,
+      "explicacao": "O empregador deve depositar 8% do salário do empregado em conta FGTS mensalmente (Lei 8.036/90)."
+    },
+    {
+      "id": 60,
+      "materia": "trabalho",
+      "enunciado": "A partir de quando a gestante adquire estabilidade no emprego?",
+      "alternativas": [
+        "A) Desde a descoberta da gravidez",
+        "B) Desde a confirmação da gravidez",
+        "C) Apenas após o parto",
+        "D) Apenas quando avisa o empregador"
+      ],
+      "gabarito": 1,
+      "explicacao": "A gestante adquire estabilidade provisória desde a confirmação da gravidez até 5 meses após o parto (art. 10, II, b ADCT CF)."
+    },
+    {
+      "id": 61,
+      "materia": "trabalho",
+      "enunciado": "Qual é o horário considerado noturno para fins de adicional noturno?",
+      "alternativas": [
+        "A) 18h às 6h",
+        "B) 20h às 5h",
+        "C) 22h às 5h",
+        "D) 21h às 6h"
+      ],
+      "gabarito": 2,
+      "explicacao": "Horário noturno é aquele compreendido entre 22h de um dia e 5h do dia seguinte (art. 73 CLT), com adicional mínimo de 20%."
+    },
+    {
+      "id": 62,
+      "materia": "trabalho",
+      "enunciado": "Qual é o principal princípio protetor do direito do trabalho?",
+      "alternativas": [
+        "A) Princípio da igualdade",
+        "B) Princípio da impessoalidade",
+        "C) Princípio in dubio pro operário",
+        "D) Princípio da legalidade"
+      ],
+      "gabarito": 2,
+      "explicacao": "In dubio pro operário significa que na dúvida, interpretam-se as normas trabalhistas a favor do trabalhador, principal princípio protetor."
+    },
+    {
+      "id": 63,
+      "materia": "trabalho",
+      "enunciado": "Qual é o prazo para ajuizar ação trabalhista após extinction do contrato de trabalho?",
+      "alternativas": [
+        "A) 6 meses",
+        "B) 1 ano",
+        "C) 2 anos",
+        "D) 5 anos"
+      ],
+      "gabarito": 2,
+      "explicacao": "O prazo para ajuizar ação trabalhista é 2 anos contados da extinction do contrato de trabalho (art. 11 CLT), incluindo créditos retroativos até 5 anos."
+    },
+    {
+      "id": 64,
+      "materia": "trabalho",
+      "enunciado": "Qual é a primazia fundamental do direito do trabalho?",
+      "alternativas": [
+        "A) Supremacia da lei escrita",
+        "B) Primazia da realidade sobre a forma",
+        "C) Igualdade absoluta entre partes",
+        "D) Liberdade total de contratação"
+      ],
+      "gabarito": 1,
+      "explicacao": "Primazia da realidade significa que o contrato real prevalece sobre o documento escrito, analisando-se o que realmente ocorreu."
+    },
+    {
+      "id": 65,
+      "materia": "administrativo",
+      "enunciado": "Qual é o primeiro princípio da administração pública (LIMPE)?",
+      "alternativas": [
+        "A) Impessoalidade",
+        "B) Legalidade",
+        "C) Moralidade",
+        "D) Publicidade"
+      ],
+      "gabarito": 1,
+      "explicacao": "Legalidade é o princípio fundamental - a administração deve atuar conforme a lei (art. 37 CF), nenhum ato sem lei prévia."
+    },
+    {
+      "id": 66,
+      "materia": "administrativo",
+      "enunciado": "O que significa revogação de ato administrativo?",
+      "alternativas": [
+        "A) Anulação por ilegalidade",
+        "B) Cassação de direitos",
+        "C) Extinção por questão de mérito/conveniência",
+        "D) Suspensão provisória"
+      ],
+      "gabarito": 2,
+      "explicacao": "Revogação extingue ato administrativo válido por razões de mérito, oportunidade ou conveniência (decisão posterior da administração)."
+    },
+    {
+      "id": 67,
+      "materia": "administrativo",
+      "enunciado": "Qual é a modalidade de licitação mais comum e exigente?",
+      "alternativas": [
+        "A) Convite",
+        "B) Tomada de preços",
+        "C) Concorrência",
+        "D) Pregão"
+      ],
+      "gabarito": 2,
+      "explicacao": "Concorrência é a modalidade mais exigente, aberta a qualquer interessado, exigida para maiores valores (Lei 8.666/93)."
+    },
+    {
+      "id": 68,
+      "materia": "administrativo",
+      "enunciado": "Qual é a sanção mais grave por improbidade administrativa?",
+      "alternativas": [
+        "A) Advertência",
+        "B) Multa pecuniária",
+        "C) Suspensão de direitos políticos",
+        "D) Perda do cargo"
+      ],
+      "gabarito": 3,
+      "explicacao": "Perda do cargo é sanção máxima por improbidade administrativa, conforme Lei 8.429/92, podendo acumular com outras sanções."
+    },
+    {
+      "id": 69,
+      "materia": "administrativo",
+      "enunciado": "Qual é a responsabilidade civil do Estado pelos atos de seus agentes?",
+      "alternativas": [
+        "A) Objetiva (risco administrativo)",
+        "B) Subjetiva (culpa comprovada)",
+        "C) Solidária com o agente",
+        "D) Nula (imunidade)"
+      ],
+      "gabarito": 0,
+      "explicacao": "Responsabilidade civil do Estado é objetiva (risco administrativo), dispensando prova de culpa, apenas exigindo dano e nexo causal (art. 37, § 6º CF)."
+    },
+    {
+      "id": 70,
+      "materia": "administrativo",
+      "enunciado": "Qual é o prazo de estabilidade para servidores públicos civis?",
+      "alternativas": [
+        "A) 1 ano",
+        "B) 2 anos",
+        "C) 3 anos",
+        "D) 5 anos"
+      ],
+      "gabarito": 2,
+      "explicacao": "Servidores públicos civis adquirem estabilidade após 3 anos de exercício (art. 41 CF), requerendo processo administrativo para demissão."
+    },
+    {
+      "id": 71,
+      "materia": "administrativo",
+      "enunciado": "Qual é a característica principal de um ato administrativo autoexecutório?",
+      "alternativas": [
+        "A) Requer ordem judicial para ser cumprido",
+        "B) Executa-se por si mesmo, sem intervenção judicial",
+        "C) Necessita aprovação do Poder Legislativo",
+        "D) Precisa de consenso das partes"
+      ],
+      "gabarito": 1,
+      "explicacao": "Atos autoexecutórios executam-se por si mesmos, sem necessidade de ordem judicial ou consentimento da parte, como embargo de obra irregular."
+    },
+    {
+      "id": 72,
+      "materia": "administrativo",
+      "enunciado": "O que é inexigibilidade de licitação?",
+      "alternativas": [
+        "A) Quando a lei dispensa a licitação",
+        "B) Quando é impossível realizar licitação por natureza",
+        "C) Quando não há interessados",
+        "D) Quando falta verba orçamentária"
+      ],
+      "gabarito": 1,
+      "explicacao": "Inexigibilidade (art. 25 Lei 8.666/93) ocorre quando é impossível realizar licitação por natureza (ex: serviço só prestado por pessoa específica)."
+    },
+    {
+      "id": 73,
+      "materia": "consumidor",
+      "enunciado": "Qual é a principal característica da vulnerabilidade do consumidor?",
+      "alternativas": [
+        "A) É opcional comprovação",
+        "B) É presumida pela lei",
+        "C) Só existe em grandes compras",
+        "D) Deve ser provada em tribunal"
+      ],
+      "gabarito": 1,
+      "explicacao": "Vulnerabilidade do consumidor é PRESUMIDA pela lei (art. 4º CDC), não sendo necessária sua comprovação em cada caso."
+    },
+    {
+      "id": 74,
+      "materia": "consumidor",
+      "enunciado": "Qual é o prazo máximo de duração de um produto durável segundo o CDC?",
+      "alternativas": [
+        "A) 30 dias",
+        "B) 45 dias",
+        "C) 90 dias",
+        "D) 120 dias"
+      ],
+      "gabarito": 2,
+      "explicacao": "O consumidor tem 90 dias para reclamar sobre vícios em produtos duráveis (art. 26 CDC), a contar da compra."
+    },
+    {
+      "id": 75,
+      "materia": "consumidor",
+      "enunciado": "O que é cláusula abusiva segundo o CDC?",
+      "alternativas": [
+        "A) Qualquer cláusula com valor alto",
+        "B) Cláusula que causa desequilíbrio na relação de consumo",
+        "C) Cláusula que não consta do contrato",
+        "D) Cláusula escrita em letra pequena"
+      ],
+      "gabarito": 1,
+      "explicacao": "Cláusula abusiva causa desequilíbrio significativo nos direitos/obrigações da relação de consumo (art. 51 CDC), sendo nulas de pleno direito."
+    },
+    {
+      "id": 76,
+      "materia": "consumidor",
+      "enunciado": "Qual é o tipo de responsabilidade do fabricante por fato do produto?",
+      "alternativas": [
+        "A) Subjetiva",
+        "B) Objetiva e solidária",
+        "C) Apenas culposa",
+        "D) Limitada ao seu estabelecimento"
+      ],
+      "gabarito": 1,
+      "explicacao": "Responsabilidade por fato do produto é OBJETIVA e SOLIDÁRIA (fabricante, produtor, distribuidor, loja), independente de culpa (art. 18 CDC)."
+    },
+    {
+      "id": 77,
+      "materia": "consumidor",
+      "enunciado": "Qual é a definição legal de consumidor segundo o CDC?",
+      "alternativas": [
+        "A) Apenas pessoa física",
+        "B) Qualquer pessoa que compra algo",
+        "C) Pessoa física ou jurídica que adquire produto/serviço como destinatário final",
+        "D) Apenas empresa comercial"
+      ],
+      "gabarito": 2,
+      "explicacao": "Consumidor é pessoa física ou jurídica que adquire ou utiliza produto/serviço como destinatário final (art. 2º CDC)."
+    },
+    {
+      "id": 78,
+      "materia": "consumidor",
+      "enunciado": "Qual é a consequência da prática de venda casada segundo o CDC?",
+      "alternativas": [
+        "A) Multa simples ao vendedor",
+        "B) Multa e rescisão do contrato",
+        "C) Nulidade da prática e reparação de danos",
+        "D) Apenas aviso ao lojista"
+      ],
+      "gabarito": 2,
+      "explicacao": "Venda casada é prática abusiva proibida (art. 39 CDC), causando nulidade e obrigação de reparação de danos ao consumidor."
+    },
+    {
+      "id": 79,
+      "materia": "consumidor",
+      "enunciado": "Quando pode o juiz inverter o ônus da prova em favor do consumidor?",
+      "alternativas": [
+        "A) Sempre, automaticamente",
+        "B) Nunca, sempre favorece o fornecedor",
+        "C) Quando verossímil a alegação ou hipossuficiente o consumidor",
+        "D) Apenas em crimes"
+      ],
+      "gabarito": 2,
+      "explicacao": "Inversão do ônus da prova é a critério do juiz quando verossímeis as alegações do consumidor ou quando hipossuficiente (art. 6º, VIII CDC)."
+    },
+    {
+      "id": 80,
+      "materia": "consumidor",
+      "enunciado": "Qual é a categoria de consumidor hipervulnerável segundo doutrina pacífica?",
+      "alternativas": [
+        "A) Apenas pobres",
+        "B) Apenas mulheres",
+        "C) Idosos, crianças e deficientes",
+        "D) Apenas analfabetos"
+      ],
+      "gabarito": 2,
+      "explicacao": "Consumidores hipervulneráveis são idosos, crianças, deficientes e analfabetos, recebendo proteção especial da lei e jurisprudência."
+    },
+    {
+      "id": 81,
+      "materia": "empresarial",
+      "enunciado": "Qual é a definição de empresário segundo o Código Civil?",
+      "alternativas": [
+        "A) Qualquer pessoa que compra e vende",
+        "B) Quem exerce profissionalmente atividade econômica organizada",
+        "C) Apenas propriedade rural",
+        "D) Apenas comércio em loja física"
+      ],
+      "gabarito": 1,
+      "explicacao": "Empresário é quem exerce profissionalmente atividade econômica organizada para produção/circulação de bens/serviços (art. 966 CC)."
+    },
+    {
+      "id": 82,
+      "materia": "empresarial",
+      "enunciado": "Qual é o requisito essencial para a existência de títulos de crédito?",
+      "alternativas": [
+        "A) Apenas acordo verbal entre partes",
+        "B) Literalidade, cartularidade e autonomia",
+        "C) Registro em cartório",
+        "D) Aprovação do banco"
+      ],
+      "gabarito": 1,
+      "explicacao": "Títulos de crédito exigem: literalidade (valor está no documento), cartularidade (necessário ter o documento) e autonomia (cada obrigação é independente)."
+    },
+    {
+      "id": 83,
+      "materia": "empresarial",
+      "enunciado": "Qual é a prescrição para ação contra sacado de cheque?",
+      "alternativas": [
+        "A) 3 meses",
+        "B) 6 meses",
+        "C) 1 ano",
+        "D) 2 anos"
+      ],
+      "gabarito": 1,
+      "explicacao": "Prescrição para ação contra sacado (devedor) é 6 meses contados da data do vencimento do cheque (Lei 7.357/85)."
+    },
+    {
+      "id": 84,
+      "materia": "empresarial",
+      "enunciado": "Qual é a responsabilidade dos sócios em Sociedade Limitada?",
+      "alternativas": [
+        "A) Ilimitada e pessoal",
+        "B) Limitada ao capital investido",
+        "C) Sem responsabilidade",
+        "D) Solidária com terceiros"
+      ],
+      "gabarito": 1,
+      "explicacao": "Em Sociedade Limitada (art. 1.052 CC), a responsabilidade dos sócios é LIMITADA ao valor do capital por eles investido."
+    },
+    {
+      "id": 85,
+      "materia": "empresarial",
+      "enunciado": "O que é desconsideração da personalidade jurídica?",
+      "alternativas": [
+        "A) Dissolução da empresa",
+        "B) Responsabilização dos sócios além do capital investido",
+        "C) Apenas autuação pela receita",
+        "D) Cancelamento de registro"
+      ],
+      "gabarito": 1,
+      "explicacao": "Desconsideração (art. 50 CC) responsabiliza pessoalmente os sócios quando há abuso de direito, confusão patrimonial ou desvio de finalidade."
+    },
+    {
+      "id": 86,
+      "materia": "empresarial",
+      "enunciado": "Qual é o prazo para aprovação do plano de recuperação judicial?",
+      "alternativas": [
+        "A) 30 dias",
+        "B) 60 dias",
+        "C) 90 dias",
+        "D) 120 dias"
+      ],
+      "gabarito": 1,
+      "explicacao": "Plano de recuperação judicial deve ser apresentado em até 60 dias (art. 53 Lei 11.101/05), sendo votado em assembleia de credores."
+    },
+    {
+      "id": 87,
+      "materia": "empresarial",
+      "enunciado": "Qual é a consequência de insolvência de empresário individual?",
+      "alternativas": [
+        "A) Apenas multa",
+        "B) Falência (art. 1º Lei 11.101/05)",
+        "C) Dissolução automática",
+        "D) Reabilitação automática"
+      ],
+      "gabarito": 1,
+      "explicacao": "Empresário insolvente está sujeito ao regime de falência (Lei 11.101/05), com liquidação de bens e distribuição aos credores."
+    },
+    {
+      "id": 88,
+      "materia": "empresarial",
+      "enunciado": "O que é nome empresarial (razão social)?",
+      "alternativas": [
+        "A) Qualquer nome escolhido livremente",
+        "B) Identificação da empresa registrada na Junta Comercial",
+        "C) Nome do sócio majoritário",
+        "D) Nome da marca comercial"
+      ],
+      "gabarito": 1,
+      "explicacao": "Nome empresarial/razão social é a identificação obrigatória da empresa registrada na Junta Comercial, conforme disposições do CC e Lei 8.934/94."
+    },
+    {
+      "id": 89,
+      "materia": "humanosintl",
+      "enunciado": "Qual é a primeira geração de direitos humanos?",
+      "alternativas": [
+        "A) Direitos sociais e econômicos",
+        "B) Direitos difusos e coletivos",
+        "C) Direitos civis e políticos (liberdade)",
+        "D) Direitos ambientais"
+      ],
+      "gabarito": 2,
+      "explicacao": "Primeira geração: direitos civis e políticos (liberdade), vida, liberdade de expressão, voto, propriedade (século XVIII-XIX)."
+    },
+    {
+      "id": 90,
+      "materia": "humanosintl",
+      "enunciado": "O que proíbe o Pacto de São José da Costa Rica?",
+      "alternativas": [
+        "A) Apenas prisão por crimes graves",
+        "B) Prisão por dívida (exceto alimentos)",
+        "C) Qualquer tipo de privação de liberdade",
+        "D) Uso de armas"
+      ],
+      "gabarito": 1,
+      "explicacao": "Pacto de São José (CADH, art. 7º) proíbe prisão por dívida, COM EXCEÇÃO de dívida alimentar (alimentos devidos à família)."
+    },
+    {
+      "id": 91,
+      "materia": "humanosintl",
+      "enunciado": "Qual é o tribunal responsável por julgar violações do Pacto de São José?",
+      "alternativas": [
+        "A) Supremo Tribunal Federal",
+        "B) Tribunal Penal Internacional",
+        "C) Corte Interamericana de Direitos Humanos",
+        "D) Tribunal de Contas da União"
+      ],
+      "gabarito": 2,
+      "explicacao": "Corte Interamericana de Direitos Humanos (Corte IDH), sediada em San José da Costa Rica, julga violações da CADH pelos Estados-partes."
+    },
+    {
+      "id": 92,
+      "materia": "humanosintl",
+      "enunciado": "Qual é a principal característica dos direitos humanos quanto à temporalidade?",
+      "alternativas": [
+        "A) São temporários e caducam",
+        "B) São imprescritíveis (não caducam)",
+        "C) Caducam após 10 anos",
+        "D) Caducam com a morte"
+      ],
+      "gabarito": 1,
+      "explicacao": "Imprescritibilidade: direitos humanos não caducam, nunca expirando, permitindo ação judicial em qualquer momento (característica fundamental)."
+    },
+    {
+      "id": 93,
+      "materia": "humanosintl",
+      "enunciado": "Qual é a posição dos tratados internacionais de direitos humanos no ordenamento constitucional brasileiro?",
+      "alternativas": [
+        "A) Rango igual à lei ordinária",
+        "B) Hierarquia constitucional (com Emenda 45/04)",
+        "C) Subordinados à lei ordinária",
+        "D) Não têm efeito vinculante"
+      ],
+      "gabarito": 1,
+      "explicacao": "Com Emenda Constitucional 45/04, tratados internacionais de direitos humanos têm hierarquia constitucional quando aprovados por 3/5 em ambas casas."
+    },
+    {
+      "id": 94,
+      "materia": "humanosintl",
+      "enunciado": "Qual é a segunda geração de direitos humanos?",
+      "alternativas": [
+        "A) Direitos civis (liberdade)",
+        "B) Direitos sociais, econômicos e culturais (igualdade)",
+        "C) Direitos difusos (fraternidade)",
+        "D) Direitos políticos"
+      ],
+      "gabarito": 1,
+      "explicacao": "Segunda geração: direitos sociais, econômicos e culturais (igualdade), trabalho, educação, saúde, previdência (século XIX-XX)."
+    },
+    {
+      "id": 95,
+      "materia": "humanosintl",
+      "enunciado": "O que é controle de convencionalidade?",
+      "alternativas": [
+        "A) Controle de constitucionalidade",
+        "B) Controle de conformidade com tratados internacionais de DH",
+        "C) Controle administrativo",
+        "D) Controle de legalidade"
+      ],
+      "gabarito": 1,
+      "explicacao": "Controle de convencionalidade verifica se leis/atos nacionais estão conforme tratados internacionais de direitos humanos (Corte IDH, STF)."
+    },
+    {
+      "id": 96,
+      "materia": "humanosintl",
+      "enunciado": "Qual é a característica de indivisibilidade dos direitos humanos?",
+      "alternativas": [
+        "A) Cada direito pode existir isoladamente",
+        "B) Direitos civis não relacionam com sociais",
+        "C) Todos os direitos são interdependentes e indivisíveis",
+        "D) Há direitos mais importantes que outros"
+      ],
+      "gabarito": 2,
+      "explicacao": "Indivisibilidade: direitos humanos são interdependentes, não podendo ser separados - civil, social, político e cultural se complementam."
+    }
+  ]
+}
