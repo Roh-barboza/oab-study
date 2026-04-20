@@ -320,6 +320,128 @@ if (heroStart) {
 }
 
 // ============================================
+// PDFs SYSTEM
+// ============================================
+let pdfViewer = null;
+let currentPdfFilter = 'todos';
+
+function renderPDFs(materia = 'todos') {
+  const pdfGrid = document.getElementById('pdfGrid');
+  if (!pdfGrid) return;
+
+  let pdfs = PDF_STORAGE.getAll();
+  if (materia !== 'todos') {
+    pdfs = pdfs.filter(p => p.materia === materia);
+  }
+
+  if (!pdfs || pdfs.length === 0) {
+    pdfGrid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 3rem; color: var(--muted);"><p>Nenhum PDF encontrado</p><p style="margin-top: 1rem; font-size: 0.9rem;">Adicione um PDF usando o botão de upload acima.</p></div>';
+    return;
+  }
+
+  pdfGrid.innerHTML = pdfs.map(pdf => `
+    <div class="pdf-card" data-id="${pdf.id}">
+      <div class="pdf-header">
+        <div class="pdf-icon">📄</div>
+        <button class="pdf-remove" data-id="${pdf.id}" aria-label="Remover">✕</button>
+      </div>
+      <div class="pdf-content">
+        <h4>${pdf.titulo}</h4>
+        <p>${pdf.descricao}</p>
+        <div class="pdf-meta">
+          <small>${pdf.data}</small>
+        </div>
+        ${pdf.tags && pdf.tags.length > 0 ? `<div class="pdf-tags">${pdf.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}</div>` : ''}
+        <button class="pdf-open" data-id="${pdf.id}">Abrir →</button>
+      </div>
+    </div>
+  `).join('');
+
+  // Adiciona listeners
+  document.querySelectorAll('.pdf-open').forEach(btn => {
+    btn.addEventListener('click', () => openPDFViewer(btn.dataset.id));
+  });
+
+  document.querySelectorAll('.pdf-remove').forEach(btn => {
+    btn.addEventListener('click', () => removePDF(btn.dataset.id));
+  });
+}
+
+function openPDFViewer(pdfId) {
+  const pdf = PDF_STORAGE.getById(pdfId);
+  if (!pdf) return;
+
+  const modal = document.createElement('div');
+  modal.className = 'pdf-modal';
+  modal.innerHTML = `
+    <div class="pdf-viewer">
+      <div class="pdf-toolbar">
+        <div class="pdf-title">
+          <h3>${pdf.titulo}</h3>
+          <p>${pdf.descricao}</p>
+        </div>
+        <button class="pdf-close" aria-label="Fechar">✕</button>
+      </div>
+      <div class="pdf-frame">
+        ${pdf.url ? `<embed src="${pdf.url}" type="application/pdf" width="100%" height="100%">` :
+          '<p style="padding: 2rem; text-align: center; color: var(--muted);">PDF não carregado. Faça upload do arquivo.</p>'}
+      </div>
+    </div>
+  `;
+
+  document.body.appendChild(modal);
+
+  modal.querySelector('.pdf-close').addEventListener('click', () => {
+    modal.remove();
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) modal.remove();
+  });
+}
+
+function removePDF(pdfId) {
+  if (confirm('Deseja remover este PDF?')) {
+    PDF_STORAGE.removePDF(pdfId);
+    renderPDFs(currentPdfFilter);
+  }
+}
+
+// Filtros de PDF
+document.querySelectorAll('.filter-chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+    chip.classList.add('active');
+    currentPdfFilter = chip.dataset.filter;
+    renderPDFs(currentPdfFilter);
+  });
+});
+
+// Upload de PDF
+const uploadPdfBtn = document.getElementById('uploadPdfBtn');
+if (uploadPdfBtn) {
+  uploadPdfBtn.addEventListener('click', () => {
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = '.pdf';
+    input.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (event) => {
+          // Aqui você pode processar o PDF ou armazenar a URL
+          alert('PDF importado com sucesso! (Funcionalidade de upload está pronta para integração com backend)');
+          // PDF_STORAGE.addPDF({ titulo: file.name, materia: 'etica', descricao: 'Importado', tags: [], url: event.target.result });
+          // renderPDFs(currentPdfFilter);
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+    input.click();
+  });
+}
+
+// ============================================
 // INICIALIZAÇÃO
 // ============================================
 function init() {
@@ -329,6 +451,8 @@ function init() {
   renderTimer();
   updateStats();
   updateRecommendation();
+  initPDFSystem();
+  renderPDFs();
 }
 
 // Inicializar quando o DOM estiver pronto

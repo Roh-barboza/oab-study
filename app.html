@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>OAB Premium Study - Sistema de Estudos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5Z"/></svg>
+      </div>
+      <div>
+        <h1>OAB Premium</h1>
+        <p>Estudos gamificados</p>
+      </div>
+    </div>
+    <nav class="nav" aria-label="Navegação principal">
+      <button class="active" data-nav="dashboard">📊 Dashboard</button>
+      <button data-nav="materias">📚 Matérias</button>
+      <button data-nav="questoes">❓ Questões</button>
+      <button data-nav="flashcards">🎴 Flashcards</button>
+      <button data-nav="pdfs">📄 PDFs</button>
+      <button data-nav="simulados">🎯 Simulados</button>
+      <button data-nav="calendario">📅 Calendário</button>
+      <button data-nav="progresso">🏆 Progresso</button>
+    </nav>
+    <div class="sidebar-card">
+      <strong>Nível 12 · 3.420 XP</strong>
+      <p>Sistema pensado para estudar por matéria, revisar com flashcards, acompanhar acertos em tempo real e parecer um produto premium de verdade.</p>
+      <div class="badge-row">
+        <span class="badge">Streak 8 dias</span>
+        <span class="badge">Precisão 76%</span>
+        <span class="badge">Meta 2h/dia</span>
+      </div>
+    </div>
+  </aside>
+  <main class="main">
+    <div class="topbar">
+      <div style="display:flex;align-items:center;gap:1rem;">
+        <button class="mobile-menu" id="menuButton" aria-label="Abrir menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+        <div>
+          <div class="helper">Sistema premium para OAB</div>
+          <strong>Versão 2.0 · Pronto para GitHub</strong>
+        </div>
+      </div>
+      <div class="status-bar">
+        <span class="status-pill">✨ Design Premium</span>
+        <span class="status-pill">🔥 Conteúdo Real</span>
+        <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg>
+        </button>
+      </div>
+    </div>
+
+    <section class="hero">
+      <div>
+        <span class="eyebrow">Sistema OAB · Questões + Revisão + Progresso</span>
+        <h2>Estudar, errar, acertar e evoluir sem se perder.</h2>
+        <p>Plataforma premium com dashboard gamificado, cartões por matéria, questões com marcação de acerto e erro, flashcards, timer, heatmap e calendário semanal.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" id="heroStart" href="#questoes">Começar pelas questões</a>
+          <a class="btn btn-secondary" href="#materias">Ver matérias</a>
+        </div>
+      </div>
+      <div class="hero-panel">
+        <div class="mini-grid">
+          <div class="mini-card"><span>XP hoje</span><strong id="xpToday">240</strong></div>
+          <div class="mini-card"><span>Sequência</span><strong id="streakValue">8 dias</strong></div>
+          <div class="mini-card"><span>Acertos</span><strong id="correctValue">19</strong></div>
+          <div class="mini-card"><span>Erros</span><strong id="wrongValue">6</strong></div>
+        </div>
+        <div class="panel" style="padding:1rem 1.1rem;">
+          <div style="display:flex;justify-content:space-between;gap:1rem;align-items:center;">
+            <div>
+              <strong>Evolução geral</strong>
+              <p class="helper">Quanto mais questões certas, mais XP e desbloqueios.</p>
+            </div>
+            <strong id="globalPercent" style="color:var(--primary);">76%</strong>
+          </div>
+          <div class="progress" style="margin-top:1rem;"><span id="globalBar" style="width:76%"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="dashboard">
+      <div class="section-head"><div><h3>Visão geral</h3><p>Seu painel principal para decidir o próximo passo de estudo.</p></div></div>
+      <div class="stats-grid">
+        <article class="stat-card"><div class="label">Questões resolvidas</div><div class="value" id="totalAnswered">25</div><div class="delta">+12 nesta semana</div></article>
+        <article class="stat-card"><div class="label">Taxa de acerto</div><div class="value" id="accuracyRate">76%</div><div class="delta">Subindo com revisões</div></article>
+        <article class="stat-card"><div class="label">Flashcards vistos</div><div class="value" id="cardsSeen">41</div><div class="delta">Meta diária batida</div></article>
+        <article class="stat-card"><div class="label">Tempo focado</div><div class="value" id="focusTime">07h 20m</div><div class="delta">+1h 30m hoje</div></article>
+      </div>
+    </section>
+
+    <section class="section" id="materias"><div class="section-head"><div><h3>Matérias</h3><p>Cards prontos para organizar estudo, desempenho e revisão por disciplina.</p></div></div><div class="subject-grid" id="subjectGrid"></div></section>
+
+    <section class="section" id="questoes">
+      <div class="section-head"><div><h3>Questões</h3><p>Marque a resposta e o sistema atualiza acertos, erros e XP em tempo real.</p></div></div>
+      <div class="question-layout">
+        <article class="question-card">
+          <div class="pill" id="questionSubject">Ética Profissional</div>
+          <h4 id="questionText">No contexto disciplinar da advocacia, qual medida representa a sanção mais grave dentro do Estatuto?</h4>
+          <div class="options" id="options"></div>
+          <div class="feedback" id="feedbackBox">Escolha uma alternativa para receber feedback imediato.</div>
+          <div class="question-footer">
+            <button class="btn btn-primary" id="nextQuestion">Próxima questão</button>
+            <button class="btn btn-secondary" id="markReviewed">Marcar para revisão</button>
+          </div>
+        </article>
+        <article class="question-card">
+          <h4>Resumo da rodada</h4>
+          <p>Use este bloco para transformar a sessão de questões em treino contínuo.</p>
+          <div class="mini-grid" style="margin-top:1rem;">
+            <div class="mini-card"><span>XP total</span><strong id="xpTotal">3420</strong></div>
+            <div class="mini-card"><span>Nível</span><strong id="levelValue">12</strong></div>
+            <div class="mini-card"><span>Revisar</span><strong id="reviewQueue">7</strong></div>
+            <div class="mini-card"><span>Conquistas</span><strong id="achievementCount">5</strong></div>
+          </div>
+          <div style="margin-top:1rem;" class="panel"><div style="padding:1rem;"><strong>Próxima recomendação</strong><p class="helper" id="recommendation">Resolver mais 5 questões de Administrativo e depois revisar flashcards.</p></div></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="flashcards"><div class="section-head"><div><h3>Flashcards</h3><p>Cartões rápidos para revisar conceitos e pontos sensíveis de prova.</p></div></div><div class="flashcard-grid" id="flashcardGrid"></div></section>
+
+    <section class="section" id="pdfs">
+      <div class="section-head">
+        <div>
+          <h3>Materiais em PDF</h3>
+          <p>Resumos, anotações e apostilas integradas para estudo direto na plataforma.</p>
+        </div>
+        <button class="btn btn-primary" id="uploadPdfBtn">+ Upload PDF</button>
+      </div>
+      <div class="pdf-filters">
+        <button class="filter-chip active" data-filter="todos">Todos</button>
+        <button class="filter-chip" data-filter="etica">Ética</button>
+        <button class="filter-chip" data-filter="tributario">Tributário</button>
+        <button class="filter-chip" data-filter="constitucional">Constitucional</button>
+        <button class="filter-chip" data-filter="penal">Penal</button>
+        <button class="filter-chip" data-filter="civil">Civil</button>
+      </div>
+      <div class="pdf-grid" id="pdfGrid"></div>
+    </section>
+
+    <section class="section" id="simulados">
+      <div class="section-head"><div><h3>Modos de estudo</h3><p>Tela pensada para crescer depois com banco real de questões e PDFs indexados.</p></div></div>
+      <div class="mode-grid">
+        <article class="mode-card"><h4>Simulado por matéria</h4><p>Escolha uma disciplina e faça um bloco rápido de 10, 20 ou 40 questões.</p><div class="subject-actions" style="margin-top:1rem;"><button class="chip">10 questões</button><button class="chip">20 questões</button></div></article>
+        <article class="mode-card"><h4>Simulado completo</h4><p>Treino em formato mais próximo da 1ª fase, com pontuação e relatório final.</p><div class="subject-actions" style="margin-top:1rem;"><button class="chip">Iniciar</button><button class="chip">Modo prova</button></div></article>
+        <article class="mode-card"><h4>Revisão de erros</h4><p>Puxa só o que você errou, para transformar falha em ganho de retenção.</p><div class="subject-actions" style="margin-top:1rem;"><button class="chip">Revisar erros</button></div></article>
+        <article class="mode-card"><h4>Missão diária</h4><p>1 bloco de questões + 1 rodada de flashcards + 1 pomodoro para manter streak.</p><div class="subject-actions" style="margin-top:1rem;"><button class="chip">Completar missão</button></div></article>
+      </div>
+    </section>
+
+    <section class="section" id="calendario">
+      <div class="section-head"><div><h3>Calendário semanal</h3><p>Plano enxuto para manter constância sem perder o foco principal.</p></div></div>
+      <div class="mode-grid">
+        <article class="mode-card"><h4>Segunda</h4><p>Ética + bloco de 20 questões + revisão dos erros.</p></article>
+        <article class="mode-card"><h4>Terça</h4><p>Administrativo + flashcards + mini simulado.</p></article>
+        <article class="mode-card"><h4>Quarta</h4><p>Penal + correção ativa + mapa de erros.</p></article>
+        <article class="mode-card"><h4>Quinta</h4><p>Processo Civil + questões cronometradas.</p></article>
+        <article class="mode-card"><h4>Sexta</h4><p>Constitucional + revisão espaçada.</p></article>
+        <article class="mode-card"><h4>Sábado</h4><p>Simulado completo + relatório de performance.</p></article>
+        <article class="mode-card"><h4>Domingo</h4><p>Flashcards leves + descanso estratégico.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="progresso">
+      <div class="section-head"><div><h3>Progresso gamificado</h3><p>Conquistas, timer e mapa de calor para o estudo não ficar solto.</p></div></div>
+      <div class="achievement-grid">
+        <article class="achievement"><div class="achievement-icon">🏆</div><h4>Primeiro sprint</h4><p>Resolveu 10 questões em uma sessão.</p></article>
+        <article class="achievement"><div class="achievement-icon">🔥</div><h4>Streak de 7 dias</h4><p>Manteve consistência por uma semana.</p></article>
+        <article class="achievement"><div class="achievement-icon">🧠</div><h4>Revisão ativa</h4><p>Fez 25 flashcards no mesmo dia.</p></article>
+        <article class="achievement locked"><div class="achievement-icon">⭐</div><h4>Mestre dos 80%</h4><p>Falta atingir 80% de acerto geral.</p></article>
+      </div>
+      <div class="planner-grid" style="margin-top:1rem;">
+        <article class="planner-card"><h4>Pomodoro</h4><p>Controle simples para sessões de estudo focado.</p><div class="timer-ring"><strong id="timerDisplay">25:00</strong></div><div class="subject-actions" style="justify-content:center; margin-top:1rem;"><button class="chip" id="startTimer">Iniciar</button><button class="chip" id="pauseTimer">Pausar</button><button class="chip" id="resetTimer">Resetar</button></div></article>
+        <article class="planner-card"><h4>Mapa de calor</h4><p>Intensidade de estudo da semana.</p><div class="heatmap"><span data-level="1"></span><span data-level="2"></span><span data-level="0"></span><span data-level="4"></span><span data-level="2"></span><span data-level="3"></span><span data-level="1"></span><span data-level="2"></span><span data-level="3"></span><span data-level="4"></span><span data-level="1"></span><span data-level="0"></span><span data-level="2"></span><span data-level="2"></span></div></article>
+        <article class="planner-card"><h4>Próximo passo</h4><p>Fluxo sugerido com base no seu progresso.</p><div class="subject-actions" style="margin-top:1rem; flex-direction:column; align-items:flex-start;"><button class="chip">1. Questões por matéria</button><button class="chip">2. Revisar erros</button><button class="chip">3. Flashcards</button><button class="chip">4. Simulado completo</button></div></article>
+      </div>
+    </section>
+  </main>
+</div>
+<script src="database.js"></script>
+<script src="pdf-system.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

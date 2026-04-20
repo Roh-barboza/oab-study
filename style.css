@@ -53,3 +53,38 @@ button,input,select{font:inherit}button{cursor:pointer;border:none}a{text-decora
 @media (max-width:1100px){.app{grid-template-columns:1fr}.sidebar{position:fixed;z-index:50;inset:0 auto 0 0;width:min(88vw,320px);transform:translateX(-102%);transition:transform var(--transition)}.sidebar.open{transform:translateX(0)}.mobile-menu{display:grid}.hero,.question-layout,.planner-grid,.mode-grid,.achievement-grid,.stats-grid,.subject-grid,.flashcard-grid{grid-template-columns:1fr 1fr}}
 @media (max-width:720px){.main{padding:1rem}.topbar,.section,.hero{max-width:100%}.hero,.question-layout,.planner-grid,.mode-grid,.achievement-grid,.stats-grid,.subject-grid,.flashcard-grid,.mini-grid{grid-template-columns:1fr}.hero{padding:1.2rem}.section-head{align-items:start;flex-direction:column}.brand h1{font-size:1.2rem}.hero h2{max-width:12ch}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}}
+
+/* PDF SYSTEM */
+.pdf-filters{display:flex;gap:.75rem;flex-wrap:wrap;margin:1.5rem 0;max-width:var(--content);margin-left:auto;margin-right:auto}
+.filter-chip{background:var(--surface2);border:1px solid var(--border);color:var(--muted);padding:.72rem .95rem;border-radius:var(--pill);transition:var(--transition);cursor:pointer}
+.filter-chip:hover,.filter-chip.active{background:var(--primary);color:#0a1628;border-color:var(--primary)}
+.pdf-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;max-width:var(--content);margin:0 auto}
+.pdf-card{padding:1.5rem;background:linear-gradient(180deg,rgba(30,50,85,.75),rgba(20,35,60,.65));border:1px solid var(--border);border-radius:var(--r-lg);box-shadow:var(--shadow-sm);transition:var(--transition);position:relative}
+.pdf-card:hover{transform:translateY(-4px);border-color:var(--primary);box-shadow:0 12px 40px rgba(201,168,76,.15)}
+.pdf-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem}
+.pdf-icon{font-size:2rem}
+.pdf-remove{width:32px;height:32px;border-radius:50%;background:rgba(239,68,68,.1);color:var(--error);border:none;cursor:pointer;transition:var(--transition);display:grid;place-items:center}
+.pdf-remove:hover{background:rgba(239,68,68,.25)}
+.pdf-content h4{color:var(--text);margin-bottom:.5rem}
+.pdf-content p{color:var(--muted);font-size:.9rem;margin-bottom:1rem;line-height:1.5}
+.pdf-meta{color:var(--faint);font-size:.8rem;margin-bottom:1rem}
+.pdf-tags{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem}
+.tag{padding:.3rem .6rem;border-radius:var(--r-sm);background:rgba(201,168,76,.12);color:var(--primary);font-size:.75rem;font-weight:600}
+.pdf-open{width:100%;padding:.75rem;background:var(--primary);color:#0a1628;border:none;border-radius:var(--r-md);font-weight:600;cursor:pointer;transition:var(--transition)}
+.pdf-open:hover{background:var(--primary-hover);transform:translateY(-2px)}
+
+/* PDF MODAL */
+.pdf-modal{position:fixed;inset:0;background:rgba(0,0,0,.8);backdrop-filter:blur(4px);display:grid;place-items:center;z-index:200;padding:1rem;animation:fadeIn 200ms ease-out}
+.pdf-viewer{width:100%;max-width:95%;height:85vh;background:var(--surface);border:1px solid var(--border);border-radius:2rem;box-shadow:var(--shadow-lg);display:flex;flex-direction:column;overflow:hidden}
+.pdf-toolbar{display:flex;align-items:center;justify-content:space-between;padding:1.5rem;border-bottom:1px solid var(--divider)}
+.pdf-title h3{color:var(--text);margin:0}
+.pdf-title p{color:var(--muted);font-size:.9rem;margin:.3rem 0 0}
+.pdf-close{width:40px;height:40px;border-radius:50%;background:var(--surface2);border:1px solid var(--border);color:var(--text);cursor:pointer;transition:var(--transition);font-size:1.2rem}
+.pdf-close:hover{background:rgba(239,68,68,.1);color:var(--error);border-color:var(--error)}
+.pdf-frame{flex:1;overflow:auto;padding:1.5rem}
+.pdf-frame iframe{width:100%;height:100%;border:none;border-radius:var(--r-md)}
+
+@keyframes fadeIn{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}
+
+@media (max-width:1100px){.pdf-grid{grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}}
+@media (max-width:720px){.pdf-grid{grid-template-columns:1fr}.pdf-modal{padding:0}.pdf-viewer{max-width:100%;height:100%;border-radius:0}}
