@@ -1,0 +1,188 @@
+{
+  "name": "Assistente Financeiro Inteligente",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "finance-assistant",
+        "responseMode": "lastNode",
+        "options": {, "settings": {}}
+      },
+      "id": "a1b2c3d4-e5f6-4g7h-8i9j-k0l1m2n3o4p5",
+      "name": "Webhook WhatsApp",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [100, 300],
+      "webhookId": "finance-assistant-webhook"
+    },
+    {
+      "parameters": {
+        "jsCode": "const message = $json.body.message.text.toLowerCase();\nconst phone = $json.body.key.remoteJid.split('@')[0];\n\nlet type = 'unknown';\nlet value = 0;\nlet category = 'outros';\n\n// Regex simples para extrair valores\nconst valueMatch = message.match(/(\\d+([.,]\\d{1,2})?)/);\nif (valueMatch) {\n  value = parseFloat(valueMatch[1].replace(',', '.'));\n}\n\nif (message.includes('gastei') || message.includes('paguei') || message.includes('saída')) {\n  type = 'saida';\n} else if (message.includes('recebi') || message.includes('ganhei') || message.includes('entrada')) {\n  type = 'entrada';\n} else if (message.includes('saldo') || message.includes('quanto')) {\n  type = 'consulta';\n}\n\nreturn {\n  phone,\n  message,\n  type,\n  value,\n  category\n};"
+      },
+      "id": "b2c3d4e5-f6g7-8h9i-j0k1-l2m3n4o5p6q7",
+      "name": "Processar Mensagem",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [300, 300]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT * FROM usuarios WHERE telefone = '{{ $json.phone }}';",
+        "options": {, "settings": {}}
+      },
+      "id": "c3d4e5f6-g7h8-9i0j-k1l2-m3n4o5p6q7r8",
+      "name": "Buscar Usuário",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [500, 300],
+      "credentials": {
+        "postgres": {
+          "id": "CMZeOSlJUbvHWsOP",
+          "name": "postgres_cloudfy"
+        , "settings": {}}
+      , "settings": {}}
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $node[\"Processar Mensagem\"].json.type }}",
+              "value2": "saida"
+            , "settings": {}}
+          ]
+        , "settings": {}}
+      },
+      "id": "d4e5f6g7-h8i9-j0k1-l2m3-n4o5p6q7r8s9",
+      "name": "É Saída?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [700, 300]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "INSERT INTO transacoes (usuario_id, tipo, valor, categoria) VALUES ({{ $node[\"Buscar Usuário\"].json.id }}, 'saida', {{ $node[\"Processar Mensagem\"].json.value }}, '{{ $node[\"Processar Mensagem\"].json.category }}');\nUPDATE usuarios SET saldo_mensal_atual = saldo_mensal_atual - {{ $node[\"Processar Mensagem\"].json.value }}, gastos_diarios_acumulados = CASE WHEN data_ultimo_gasto < CURRENT_DATE THEN {{ $node[\"Processar Mensagem\"].json.value }} ELSE gastos_diarios_acumulados + {{ $node[\"Processar Mensagem\"].json.value }} END, data_ultimo_gasto = CURRENT_DATE WHERE id = {{ $node[\"Buscar Usuário\"].json.id }};",
+        "options": {, "settings": {}}
+      },
+      "id": "e5f6g7h8-i9j0-k1l2-m3n4-o5p6q7r8s9t0",
+      "name": "Registrar Saída",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [900, 200],
+      "credentials": {
+        "postgres": {
+          "id": "CMZeOSlJUbvHWsOP",
+          "name": "postgres_cloudfy"
+        , "settings": {}}
+      , "settings": {}}
+    },
+    {
+      "parameters": {
+        "jsCode": "const saldo = $node[\"Buscar Usuário\"].json.saldo_mensal_atual - $node[\"Processar Mensagem\"].json.value;\nconst meta = $node[\"Buscar Usuário\"].json.meta_economia_diaria;\nconst gastosHoje = ($node[\"Buscar Usuário\"].json.data_ultimo_gasto === new Date().toISOString().split('T')[0]) ? $node[\"Buscar Usuário\"].json.gastos_diarios_acumulados + $node[\"Processar Mensagem\"].json.value : $node[\"Processar Mensagem\"].json.value;\n\nlet mensagem = `✅ Gasto de R$ ${$node[\"Processar Mensagem\"].json.value.toFixed(2)} registrado!\\n\\n`;\nmensagem += `💰 Saldo mensal atual: R$ ${saldo.toFixed(2)}\\n`;\nmensagem += `📉 Gastos hoje: R$ ${gastosHoje.toFixed(2)}\\n`;\n\nif (saldo < 0) {\n  mensagem += `\\n⚠️ Atenção: Você está no vermelho em R$ ${Math.abs(saldo).toFixed(2)}. Precisamos economizar!`;\n}\n\nreturn { mensagem };"
+      },
+      "id": "f6g7h8i9-j0k1-l2m3-n4o5-p6q7r8s9t0u1",
+      "name": "Gerar Resposta Saída",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1100, 200]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://chaoticcow-evolution.cloudfy.live/message/sendText/OAB",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "hucK88FXjn9xwsHJaimmxxvMnZ1Bzwkb"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            , "settings": {}}
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"number\": \"{{ $node[\\\"Processar Mensagem\\\"].json.phone }}\",\n  \"text\": \"{{ $json.mensagem }}\"\n}",
+        "options": {, "settings": {}}
+      },
+      "id": "g7h8i9j0-k1l2-m3n4-o5p6-q7r8s9t0u1v2",
+      "name": "Enviar WhatsApp",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [1300, 300]
+    , "settings": {}}
+  ],
+  "connections": {
+    "Webhook WhatsApp": {
+      "main": [
+        [
+          {
+            "node": "Processar Mensagem",
+            "type": "main",
+            "index": 0
+          , "settings": {}}
+        ]
+      ]
+    },
+    "Processar Mensagem": {
+      "main": [
+        [
+          {
+            "node": "Buscar Usuário",
+            "type": "main",
+            "index": 0
+          , "settings": {}}
+        ]
+      ]
+    },
+    "Buscar Usuário": {
+      "main": [
+        [
+          {
+            "node": "É Saída?",
+            "type": "main",
+            "index": 0
+          , "settings": {}}
+        ]
+      ]
+    },
+    "É Saída?": {
+      "main": [
+        [
+          {
+            "node": "Registrar Saída",
+            "type": "main",
+            "index": 0
+          , "settings": {}}
+        ]
+      ]
+    },
+    "Registrar Saída": {
+      "main": [
+        [
+          {
+            "node": "Gerar Resposta Saída",
+            "type": "main",
+            "index": 0
+          , "settings": {}}
+        ]
+      ]
+    },
+    "Gerar Resposta Saída": {
+      "main": [
+        [
+          {
+            "node": "Enviar WhatsApp",
+            "type": "main",
+            "index": 0
+          , "settings": {}}
+        ]
+      ]
+    , "settings": {}}
+  , "settings": {}}
+, "settings": {}}
