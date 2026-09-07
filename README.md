@@ -1,27 +1,40 @@
-# OAB Premium Study
+# OAB Study
 
-Sistema de estudos gamificado para a OAB — dashboard com XP, questões com feedback imediato, flashcards, calendário semanal e timer Pomodoro.
+Projeto complementar de preparação para a 1ª fase da OAB.
 
-## Funcionalidades
+## Arquitetura oficial
 
-- Dashboard com XP, streak, acertos e erros
-- Cards por matéria com progresso individual
-- Questões com feedback imediato e marcação de revisão
-- Flashcards por disciplina
-- Simulado por matéria e simulado completo
-- Calendário semanal de estudo
-- Timer Pomodoro integrado
-- Mapa de calor semanal
-- Conquistas e gamificação
-- Modo escuro/claro
+- **ChatGPT**: interface principal de estudo, explicações, questões, correções e acompanhamento.
+- **Google Drive**: biblioteca canônica de apostilas, mapas mentais e materiais.
+- **Google Sheets**: fonte canônica do progresso, trilha, histórico, erros, revisões e desempenho.
+- **Google Calendar**: rotina e lembretes.
+- **Vercel**: apoio web opcional. Não é a fonte oficial do progresso acadêmico.
 
-## Publicação
+## Papel deste repositório
 
-Repositório pronto para deploy estático na Vercel.
+Este repositório mantém apenas a aplicação web estática complementar e a documentação técnica mínima necessária para o deploy.
 
-## Estrutura
+Estrutura principal:
 
-- `index.html`
-- `style.css`
-- `script.js`
-- `README.md`
+- `index.html` — aplicação web estática atual.
+- `database.js` — banco legado usado pelo site atual; não é fonte jurídica canônica e não substitui os materiais do Google Drive.
+- `.gitignore` — proteção contra versionamento acidental de segredos e arquivos locais.
+- `docs/SECURITY_AUDIT_2026-09-07.md` — registro da limpeza de segurança.
+
+## Conteúdo acadêmico
+
+Não usar este repositório para manter cópias paralelas das apostilas ou para gerar automaticamente conteúdo jurídico por n8n, Claude, Manus ou outros fluxos antigos.
+
+Os materiais oficiais de estudo permanecem no Google Drive. Alterações legislativas e jurisprudenciais devem ser verificadas em fontes oficiais durante as sessões de estudo no ChatGPT.
+
+## Progresso
+
+Qualquer contador exibido pelo site deve ser tratado apenas como estado local da sessão. O histórico oficial do estudante está no Google Sheets.
+
+## Deploy
+
+O projeto Vercel existente é `oab-study`. Não criar um segundo projeto sem necessidade técnica documentada.
+
+## Segurança
+
+Nunca versionar tokens, senhas, API keys, `.env` ou credenciais. O antigo fluxo Evolution API/Cloudfy foi aposentado e não faz parte da arquitetura OAB.
