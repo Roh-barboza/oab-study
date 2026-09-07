@@ -1,27 +1,32 @@
-# OAB Premium Study
+# OAB Study
 
-Sistema de estudos gamificado para a OAB — dashboard com XP, questões com feedback imediato, flashcards, calendário semanal e timer Pomodoro.
+Plataforma web complementar do projeto de preparação para a 1ª fase da OAB.
 
-## Funcionalidades
+## Papel do site
 
-- Dashboard com XP, streak, acertos e erros
-- Cards por matéria com progresso individual
-- Questões com feedback imediato e marcação de revisão
-- Flashcards por disciplina
-- Simulado por matéria e simulado completo
-- Calendário semanal de estudo
-- Timer Pomodoro integrado
-- Mapa de calor semanal
-- Conquistas e gamificação
-- Modo escuro/claro
+O site serve como apoio visual e ambiente local de questões. O progresso acadêmico oficial não é armazenado aqui.
 
-## Publicação
+A fonte canônica do progresso é a Central de Estudos no Google Sheets, conduzida e atualizada pelo ChatGPT durante as sessões de estudo.
 
-Repositório pronto para deploy estático na Vercel.
+## Importante sobre os contadores
 
-## Estrutura
+Os números exibidos no site, como acertos, erros, taxa e avanço dentro de um módulo, representam apenas a sessão atual no navegador. Eles começam em zero e não devem ser interpretados como o histórico oficial da estudante.
 
-- `index.html`
-- `style.css`
-- `script.js`
+## Estrutura atual
+
+- `index.html` — aplicação web estática, com CSS e JavaScript inline
+- `database.js` — banco legado de questões/conteúdo de demonstração; não é fonte jurídica canônica
 - `README.md`
+- `docs/SECURITY_AUDIT_2026-09-07.md`
+
+Arquivos financeiros que estavam misturados neste repositório foram removidos do estado atual da branch de segurança.
+
+## Segurança
+
+Nunca versionar chaves de API, tokens, senhas ou arquivos `.env`.
+
+Consulte `docs/SECURITY_AUDIT_2026-09-07.md` para o estado da auditoria e as ações manuais ainda necessárias.
+
+## Deploy
+
+O projeto existente `oab-study` na Vercel deve ser preservado. Não criar um segundo projeto apenas para esta limpeza.
