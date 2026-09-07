@@ -1,39 +1,38 @@
-# Auditoria de segurança — 07/09/2026
+# Auditoria de segurança — encerramento em 07/09/2026
 
-## Escopo
+## Estado final
 
-Repositório público `Roh-barboza/oab-study`, incluindo árvore atual, histórico Git alcançável, arquivos misturados de um projeto financeiro e configuração pública relacionada ao deploy.
+O repositório público `Roh-barboza/oab-study` foi simplificado para o escopo OAB.
 
-## Achados principais
+A árvore atual não contém os arquivos financeiros que haviam sido misturados ao projeto, nem o fluxo antigo que expunha credencial da Evolution API/Cloudfy.
 
-- Foi identificado um segredo de API em texto claro em conteúdo histórico do projeto financeiro. O valor do segredo não é reproduzido neste documento.
-- O segredo deve ser considerado comprometido por ter sido versionado em repositório público.
-- Também foram identificados arquivos financeiros e dados não relacionados ao projeto OAB.
+O usuário confirmou que não utilizará mais Evolution API/Cloudfy neste projeto. Portanto, nenhuma nova credencial deve ser criada ou integrada ao OAB Study.
 
-## Ação obrigatória fora do GitHub
+## Limpeza executada
 
-1. Revogar a credencial antiga no provedor Evolution API/Cloudfy.
-2. Gerar uma nova credencial apenas se o fluxo financeiro ainda precisar dela.
-3. Armazenar a nova credencial somente em ambiente privado/seguro, nunca em arquivo versionado.
-4. Confirmar que a credencial antiga foi desativada antes de reescrever o histórico Git.
+- removidos os quatro artefatos do projeto financeiro da árvore atual;
+- removidos `script.js` e `style.css` legados não usados pelo `index.html` atual;
+- removidos guia de automação n8n, processador local de PDF, notas de fluxo de PDFs e plano legado Manus/Claude/SaaS;
+- adicionado `.gitignore` para segredos, ambientes e artefatos locais;
+- README alinhado à arquitetura final ChatGPT + Google;
+- `database.js` e `index.html` preservados para manter o site complementar funcionando;
+- histórico ativo da `main` reescrito para partir do último commit OAB anterior à introdução do projeto financeiro;
+- branches técnicas conhecidas foram alinhadas à história limpa para não manterem a linha contaminada ativa.
 
-## Correções aplicadas na branch de auditoria
+## Arquitetura vigente
 
-- Remoção dos artefatos financeiros do estado atual do projeto OAB.
-- Remoção de arquivos JS/CSS legados que não são referenciados pelo `index.html` atual.
-- Inclusão de `.gitignore` para arquivos de ambiente, chaves, metadados locais e dependências.
-- Documentação do risco sem registrar o valor do segredo.
-- Preservação de `database.js` sem alteração jurídica nesta etapa.
+- ChatGPT: interface principal de estudo.
+- Google Drive: fonte canônica dos materiais.
+- Google Sheets: fonte canônica do progresso acadêmico.
+- Google Calendar: rotina e lembretes.
+- Vercel: apoio web opcional.
 
-## Limitação importante
+## Observação sobre o segredo antigo
 
-Excluir um arquivo da versão atual NÃO remove seu conteúdo dos commits antigos. A limpeza do histórico deve ocorrer somente depois da rotação/revogação da credencial comprometida e com backup confirmado.
+A história ativa das branches foi saneada, mas plataformas Git podem manter objetos antigos temporariamente em caches, referências internas de pull requests, forks ou acessos diretos por SHA. A única forma de garantir que uma credencial histórica deixe de funcionar é desativá-la no provedor original.
 
-## Próxima etapa de segurança
+Como Evolution API/Cloudfy foi aposentada pelo usuário, o passo externo recomendado é excluir/desativar a instância ou chave antiga no próprio provedor, caso a conta ainda exista. Não há integração disponível neste ambiente para executar essa ação externamente.
 
-Após a confirmação de revogação da credencial antiga:
+## Regra futura
 
-- planejar a reescrita do histórico;
-- remover o segredo e dados financeiros pessoais dos commits alcançáveis;
-- atualizar o remoto de forma coordenada;
-- validar novamente o repositório e o deploy.
+Não adicionar n8n, Evolution API, banco financeiro, geração automática de conteúdo jurídico ou uma segunda IA professora sem uma nova decisão arquitetural explícita.
