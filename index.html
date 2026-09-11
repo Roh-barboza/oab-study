@@ -31,6 +31,19 @@ button{font:inherit}.app{min-height:100vh;display:grid;grid-template-columns:265
 .traplist{display:grid;gap:10px}.trap{background:white;border:1px solid var(--line);border-radius:16px;overflow:hidden}.trap button{width:100%;border:0;background:transparent;padding:16px 17px;text-align:left;display:flex;justify-content:space-between;gap:16px;font-weight:850;cursor:pointer}.trap .body{display:none;padding:0 17px 17px;color:#596477;line-height:1.6}.trap.open .body{display:block}.bad{color:var(--red)}.good{color:var(--green)}
 .unlock{padding:26px;text-align:center;background:linear-gradient(135deg,#f2f6ff,#fffdf8)}.unlock h3{font-family:Georgia,serif;font-size:27px;margin:0 0 8px}.unlock p{color:var(--muted);max-width:680px;margin:0 auto 17px;line-height:1.6}.quizwrap{display:none}.quizwrap.unlocked{display:block}.quizgrid{display:grid;grid-template-columns:1fr 270px;gap:16px}.quiz{padding:25px}.qtop{display:flex;justify-content:space-between;gap:12px;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.09em;font-weight:900}.qbar{height:5px;background:#eee8df;border-radius:99px;overflow:hidden;margin:14px 0 20px}.qbar span{display:block;height:100%;background:linear-gradient(90deg,#315fdf,#8da9ff);width:20%;transition:.3s}.question{font-family:Georgia,serif;font-size:25px;line-height:1.42;margin:0 0 18px}.options{display:grid;gap:9px}.option{border:1px solid var(--line);background:white;border-radius:14px;padding:13px 14px;text-align:left;display:flex;gap:10px;cursor:pointer;color:#344056;font-weight:700}.option:hover:not(:disabled){background:#f8faff;border-color:#b7c6ee}.letter{width:27px;height:27px;border-radius:9px;background:#f0ede7;display:grid;place-items:center;font-size:11px;font-weight:900;flex:0 0 auto}.option.correct{background:var(--green2);border-color:#a9d8c7;color:#126d50}.option.wrong{background:var(--red2);border-color:#efb7bd;color:#9f3541}.feedback{display:none;margin-top:14px;padding:14px;border-radius:14px;line-height:1.6;font-size:13px}.feedback.show{display:block}.feedback.ok{background:var(--green2)}.feedback.no{background:var(--red2)}.confidence{display:none;margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}.confidence.show{display:block}.confidence p{font-size:12px;color:var(--muted)}.crow{display:flex;gap:8px;flex-wrap:wrap}.crow button{border:1px solid var(--line);background:white;border-radius:10px;padding:8px 10px;font-weight:800;cursor:pointer}.crow button.sel{background:var(--navy);color:white}.qactions{display:flex;justify-content:flex-end;margin-top:16px}.score{padding:18px}.scoregrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.scorebox{border:1px solid var(--line);border-radius:13px;padding:11px;background:white}.scorebox span{font-size:10px;color:#8b94a2;text-transform:uppercase;font-weight:900}.scorebox b{display:block;font-size:22px;margin-top:4px}.score p{font-size:12px;line-height:1.6;color:var(--muted)}
 .result{padding:26px;text-align:center}.result h3{font-family:Georgia,serif;font-size:30px;margin:0 0 8px}.result p{color:var(--muted)}.resultcards{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin:18px 0}.resultcards div{border:1px solid var(--line);border-radius:14px;padding:12px;background:white}.resultcards b{display:block;font-size:23px}.resultcards span{font-size:10px;text-transform:uppercase;color:var(--muted);font-weight:900}.mobile{display:none}.toast{position:fixed;left:50%;bottom:20px;transform:translate(-50%,15px);opacity:0;background:#101c30;color:white;padding:11px 14px;border-radius:11px;transition:.2s;z-index:100}.toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* plataforma multi-matérias */
+.homehero{display:grid;grid-template-columns:1.1fr .9fr;gap:16px}
+.homewelcome{padding:26px}.homewelcome h2{font-family:Georgia,serif;font-size:30px;margin:0 0 10px}.homewelcome p{color:#4b576b;line-height:1.7}.todaycard{padding:22px;background:linear-gradient(135deg,#eef3ff,#fffaf0);border:1px solid #d8e0f8;border-radius:22px}.todaycard .todaytag{display:inline-flex;background:#17395f;color:#fff;border-radius:999px;padding:6px 9px;font-size:10px;text-transform:uppercase;letter-spacing:.09em;font-weight:900}.todaycard h3{font-family:Georgia,serif;font-size:23px;margin:12px 0 8px}.todaycard p{color:#536076;line-height:1.6;font-size:13px}
+.module-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}.module-tabs button{border:1px solid var(--line);background:white;border-radius:999px;padding:9px 13px;font-weight:800;color:#596578;cursor:pointer}.module-tabs button.active{background:var(--navy);color:white;border-color:var(--navy)}
+.subject-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.subject-card{--subject:#315fdf;background:white;border:1px solid var(--line);border-radius:20px;padding:17px;cursor:pointer;position:relative;overflow:hidden;transition:.2s;min-height:148px}.subject-card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--subject)}.subject-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}.subject-card .subject-icon{width:34px;height:34px;border-radius:11px;display:grid;place-items:center;background:color-mix(in srgb,var(--subject) 14%,white);color:var(--subject);font-weight:900}.subject-card h3{margin:13px 0 6px;font-size:16px}.subject-card p{margin:0;color:var(--muted);font-size:12px;line-height:1.45}.subject-card .subject-state{position:absolute;right:12px;top:12px;font-size:9px;text-transform:uppercase;font-weight:900;letter-spacing:.08em;color:#8791a0}.subject-card.today{box-shadow:0 0 0 2px color-mix(in srgb,var(--subject) 35%,white)}
+.subject-detail{display:none;margin-top:16px;padding:22px}.subject-detail.show{display:block}.detail-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}.detail-title{display:flex;gap:12px;align-items:center}.detail-dot{width:16px;height:16px;border-radius:50%;background:var(--subject)}.detail-title h3{font-family:Georgia,serif;font-size:25px;margin:0}.detail-title p{margin:4px 0 0;color:var(--muted);font-size:12px}.topic-map{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.topic-node{position:relative;border:1px solid var(--line);background:#fff;border-radius:14px;padding:11px 13px;font-size:12px;font-weight:750;color:#465268}.topic-node:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--subject);display:inline-block;margin-right:8px}.detail-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}.detail-actions a{text-decoration:none}
+.global-map-card{padding:22px;overflow:auto}.global-map{min-width:930px;min-height:650px;position:relative}.gm-center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:155px;height:155px;border-radius:50%;background:linear-gradient(145deg,#132e4f,#0c1b30);color:white;display:grid;place-items:center;text-align:center;border:9px solid #dfe7ff;box-shadow:0 20px 46px rgba(16,34,57,.18);z-index:4}.gm-center b{font-family:Georgia,serif;font-size:27px}.gm-center small{display:block;color:#bbcae0;margin-top:4px}.gm-module{position:absolute;width:260px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:15px;box-shadow:0 12px 28px rgba(22,34,53,.06);z-index:3}.gm-module h3{font-size:14px;margin:0 0 10px}.gm-subjects{display:flex;gap:6px;flex-wrap:wrap}.gm-subject{border:0;border-radius:999px;padding:7px 9px;font-size:10px;font-weight:850;cursor:pointer;background:color-mix(in srgb,var(--subject) 13%,white);color:var(--subject)}.gm1{left:335px;top:0}.gm2{left:25px;top:135px}.gm3{right:25px;top:125px}.gm4{left:25px;bottom:30px}.gm5{right:25px;bottom:30px}.gm6{left:335px;bottom:0}.gm-line{position:absolute;background:#d1d8e7;z-index:1}.gm-line.h{height:2px}.gm-line.v{width:2px}.gml1{left:463px;top:122px;height:140px}.gml2{left:260px;top:285px;width:205px}.gml3{left:465px;top:285px;width:205px}.gml4{left:260px;top:365px;width:205px}.gml5{left:465px;top:365px;width:205px}.gml6{left:463px;top:385px;height:140px}
+.palette-note{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}.palette-note span{border-radius:999px;padding:7px 10px;font-size:10px;font-weight:850;color:white}
+@media(max-width:1100px){.subject-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:800px){.homehero{grid-template-columns:1fr}.subject-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.subject-grid{grid-template-columns:1fr}.detail-head{display:block}}
+
 @media(max-width:1000px){.app{grid-template-columns:1fr}.side{display:none}.main{padding:20px 16px 92px}.top{display:block}.date{display:inline-block;margin-top:12px}.heroin{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.introgrid,.lesson,.quizgrid{grid-template-columns:1fr}.track{grid-template-columns:1fr 1fr}.casegrid{grid-template-columns:1fr}.mobile{position:fixed;display:grid;grid-template-columns:repeat(5,1fr);left:8px;right:8px;bottom:8px;background:rgba(15,31,54,.97);border-radius:15px;padding:7px;z-index:50}.mobile button{border:0;background:transparent;color:#aebbd0;padding:9px 3px;border-radius:9px;font-size:10px;font-weight:800}.mobile button.active{background:rgba(255,255,255,.1);color:white}}
 @media(max-width:680px){.top h1{font-size:34px}.hero h2{font-size:27px}.stats,.track{grid-template-columns:1fr}.mindmap{min-width:0;height:auto;display:grid;gap:10px}.mind-center,.node,.branchlabel{position:relative!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;transform:none!important;width:100%;height:auto}.mind-center{border-radius:20px;padding:22px}.line{display:none}.resultcards{grid-template-columns:1fr 1fr}.question{font-size:22px}}
 </style>
@@ -40,9 +53,10 @@ button{font:inherit}.app{min-height:100vh;display:grid;grid-template-columns:265
 <aside class="side">
   <div class="brand"><div class="logo">O</div><div><strong>OAB Study</strong><small>Aula guiada</small></div></div>
   <nav class="nav">
-    <button class="active" data-section="estudar"><span class="dot"></span>Estudar</button>
-    <button data-section="mapa"><span class="dot"></span>Mapa mental</button>
-    <button data-section="fgv"><span class="dot"></span>Casos FGV</button>
+    <button class="active" data-section="inicio"><span class="dot"></span>Início</button>
+    <button data-section="materias"><span class="dot"></span>Matérias</button>
+    <button data-section="mapageral"><span class="dot"></span>Mapa geral</button>
+    <button data-section="estudar"><span class="dot"></span>Aula de hoje</button>
     <button data-section="questoes"><span class="dot"></span>Questões</button>
     <button data-section="resultado"><span class="dot"></span>Resultado</button>
   </nav>
@@ -67,7 +81,48 @@ button{font:inherit}.app{min-height:100vh;display:grid;grid-template-columns:265
   <div class="stat"><span>Questões</span><b>5</b><small>liberadas no fim</small></div>
 </div>
 
-<section id="estudar" class="section active">
+
+<section id="inicio" class="section active">
+  <div class="sectionhead"><div><h2>Sua Central OAB</h2><p>A plataforma inteira em uma tela. A aula de hoje é só uma parte.</p></div></div>
+  <div class="homehero">
+    <div class="card homewelcome">
+      <div class="eyebrow">48º Exame • visão geral</div>
+      <h2>20 matérias, uma trilha única</h2>
+      <p>Navegue por módulos, abra o mapa mental de qualquer matéria e use a área <b>Aula de hoje</b> para seguir o tópico definido pela sua Central.</p>
+      <div class="detail-actions"><button class="btn primary" data-go="materias">Explorar matérias</button><button class="btn soft" data-go="mapageral">Abrir mapa geral</button></div>
+    </div>
+    <div class="todaycard">
+      <span class="todaytag">Hoje</span>
+      <h3>Direito Penal</h3>
+      <p><b>Lei penal no tempo e no espaço:</b> abolitio, retroatividade e territorialidade.</p>
+      <p>Meta: 5 questões • Fase 1 • sessão normal</p>
+      <button class="btn primary" data-go="estudar">Continuar aula de hoje</button>
+    </div>
+  </div>
+  <div class="sectionhead"><div><h2>Módulos da preparação</h2><p>Cores diferentes para você localizar a área antes mesmo de ler.</p></div></div>
+  <div class="palette-note">
+    <span style="background:#7048d8">Base profissional</span><span style="background:#1976d2">Privado</span><span style="background:#d1495b">Penal</span><span style="background:#e38b2c">Trabalho</span><span style="background:#16856c">Público</span><span style="background:#8a5a44">Complementares</span>
+  </div>
+</section>
+
+<section id="materias" class="section">
+  <div class="sectionhead"><div><h2>Matérias por módulo</h2><p>Clique em uma matéria para ver os blocos do mapa e acessar o mapa completo.</p></div></div>
+  <div class="module-tabs" id="moduleTabs"></div>
+  <div class="subject-grid" id="subjectGrid"></div>
+  <div class="card subject-detail" id="subjectDetail"></div>
+</section>
+
+<section id="mapageral" class="section">
+  <div class="sectionhead"><div><h2>Mapa mental geral da OAB</h2><p>Do centro para os módulos, dos módulos para as matérias.</p></div></div>
+  <div class="card global-map-card">
+    <div class="global-map" id="globalMap"></div>
+  </div>
+  <div class="palette-note">
+    <span style="background:#7048d8">Base profissional</span><span style="background:#1976d2">Privado</span><span style="background:#d1495b">Penal</span><span style="background:#e38b2c">Trabalho</span><span style="background:#16856c">Público</span><span style="background:#8a5a44">Complementares</span>
+  </div>
+</section>
+
+<section id="estudar" class="section">
   <div class="sectionhead"><div><h2>Roteiro da aula</h2><p>O conteúdo não foi reduzido a um resumo. Você pode abrir cada módulo conforme avança.</p></div></div>
   <div class="track">
     <div class="trackstep"><em>1</em><h3>Lei no tempo</h3><p>Regra, retroatividade e ultratividade.</p></div>
@@ -365,13 +420,76 @@ button{font:inherit}.app{min-height:100vh;display:grid;grid-template-columns:265
 
 </div></main></div>
 
-<nav class="mobile"><button class="active" data-section="estudar">Estudar</button><button data-section="mapa">Mapa</button><button data-section="fgv">FGV</button><button data-section="questoes">Quiz</button><button data-section="resultado">Fim</button></nav>
+<nav class="mobile"><button class="active" data-section="inicio">Início</button><button data-section="materias">Matérias</button><button data-section="mapageral">Mapa</button><button data-section="estudar">Hoje</button><button data-section="questoes">Quiz</button></nav>
 <div class="toast" id="toast">Salvo</div>
 
 <script>
 const KEY="oab-penal-2026-09-11-v2";
 const blank={modules:{},map:false,unlocked:false,idx:0,answers:[null,null,null,null,null],confidence:[null,null,null,null,null],finished:false};
 let s=load();
+
+
+const subjectModules=[
+ {id:"base",name:"Base profissional",color:"#7048d8",subjects:["Ética","Direitos Humanos","Filosofia"]},
+ {id:"privado",name:"Privado",color:"#1976d2",subjects:["Civil","Processo Civil","Empresarial","Consumidor","ECA"]},
+ {id:"penal",name:"Penal",color:"#d1495b",subjects:["Penal","Processo Penal"]},
+ {id:"trabalho",name:"Trabalho",color:"#e38b2c",subjects:["Trabalho","Processo do Trabalho","Previdenciário"]},
+ {id:"publico",name:"Público",color:"#16856c",subjects:["Constitucional","Administrativo","Tributário","Financeiro","Ambiental"]},
+ {id:"complementares",name:"Complementares",color:"#8a5a44",subjects:["Internacional","Eleitoral"]}
+];
+const subjects=[
+ {name:"Ética",icon:"OAB",module:"base",color:"#7b55d9",map:"https://drive.google.com/file/d/1wJlflaslUWWG-ybh0s47MST3DFzvQlH3/view",topics:["Normas e natureza da OAB","Órgãos de gestão","Inscrição na OAB","Eleições e mandatos","Incompatibilidades e impedimentos","Honorários","Infrações disciplinares","Publicidade e ética"]},
+ {name:"Direitos Humanos",icon:"DH",module:"base",color:"#9a63d9",map:"https://drive.google.com/file/d/1yYqyQU7evk5CTjRwv3ufHWjbfmibv-7W/view",topics:["Direitos civis e políticos","Direitos econômicos, sociais e culturais","Tratados internacionais","Sistema global","Sistema interamericano","Proteção internacional"]},
+ {name:"Filosofia",icon:"Φ",module:"base",color:"#5b4eb4",map:"https://drive.google.com/file/d/1TlTJHlI1rsEz93WDcnsia2AgEFO6Js1d/view",topics:["Aristóteles e justiça","Jusnaturalismo","Positivismo jurídico","Kelsen","Teorias contemporâneas","Interpretação e justiça"]},
+ {name:"Civil",icon:"CV",module:"privado",color:"#2879d7",map:"https://drive.google.com/file/d/1KP8asoCAYxNxyaYWHIEn6ACQb7olWQj4/view",topics:["Constitucionalização do Direito Civil","Pessoas naturais","Capacidade e emancipação","Bens e fatos jurídicos","Obrigações","Contratos","Responsabilidade civil","Família e sucessões"]},
+ {name:"Processo Civil",icon:"PC",module:"privado",color:"#3c8ce7",map:"https://drive.google.com/file/d/1XUIAQI9kJ56M5iSl0rICA4tIVs0kax3P/view",topics:["Jurisdição e ação","Competência","Sujeitos do processo","Tutela provisória","Procedimento e provas","Sentença e coisa julgada","Recursos","Execução"]},
+ {name:"Empresarial",icon:"EM",module:"privado",color:"#1565c0",map:"https://drive.google.com/file/d/1AdLJg_vgTybUvw5ZmrHTVjZFJ8WLMDf-/view",topics:["Empresa e empresário","Registro empresarial","Sociedades","Títulos de crédito","Contratos empresariais","Recuperação e falência"]},
+ {name:"Consumidor",icon:"CDC",module:"privado",color:"#42a5f5",map:"https://drive.google.com/file/d/1u6wuKxrbSXMUNIj1c8Kkz8je1BT0Cbqk/view",topics:["Relação de consumo","Consumidor e fornecedor","Produto e serviço","Responsabilidade","Vícios e fatos","Práticas comerciais","Contratos de consumo"]},
+ {name:"ECA",icon:"ECA",module:"privado",color:"#00a2c7",map:"https://drive.google.com/file/d/10F7WDF1skLmwWPu8g80YBxVtLnm3uuxy/view",topics:["Sistema de direitos","Princípios de proteção","Família e convivência","Guarda e adoção","Ato infracional","Medidas socioeducativas","Conselho Tutelar"]},
+ {name:"Penal",icon:"DP",module:"penal",color:"#d1495b",map:"https://drive.google.com/file/d/1uTHsyFAL1CrUrSacF-HDuA2SSs7Lw1Ay/view",today:true,topics:["Lei penal no tempo","Abolitio criminis","Tempo e lugar do crime","Territorialidade e extraterritorialidade","Nexo causal","Iter criminis","Erro, dolo e culpa","Ilicitude, culpabilidade e penas"]},
+ {name:"Processo Penal",icon:"PP",module:"penal",color:"#e05c68",map:"https://drive.google.com/file/d/1gw5gnNjQj85_BlgWrDuGqUSGAPGN30Or/view",topics:["Princípios processuais penais","Inquérito policial","Ação penal","Competência","Provas","Prisões e cautelares","Procedimentos","Nulidades e recursos"]},
+ {name:"Trabalho",icon:"DT",module:"trabalho",color:"#e38b2c",map:"https://drive.google.com/file/d/1aOg-IGpECkqCHCgMG0NZCW4I5D0qPjd6/view",topics:["Princípios trabalhistas","Relação de emprego","Contrato de trabalho","Jornada","Remuneração","Férias e FGTS","Estabilidade","Extinção do contrato"]},
+ {name:"Processo do Trabalho",icon:"PT",module:"trabalho",color:"#ef9d3f",map:"https://drive.google.com/file/d/19VxzU7jduzOJoeLEi3SDZpuKfwveW2yD/view",topics:["Fontes e princípios","Competência trabalhista","Partes e procuradores","Atos e prazos","Audiência e provas","Sentença","Recursos","Execução"]},
+ {name:"Previdenciário",icon:"PR",module:"trabalho",color:"#d97706",map:"https://drive.google.com/file/d/1SDoDF9HQh5I4NEp5K9S2vPkW6tYAlBkx/view",topics:["Seguridade Social","RGPS","Segurados","Carência e qualidade","Benefícios","Custeio","Aposentadorias"]},
+ {name:"Constitucional",icon:"CF",module:"publico",color:"#16856c",map:"https://drive.google.com/file/d/1ASa3WUcqeI8WY5pWtLozgVNVcqjPIXbR/view",topics:["Eficácia das normas","Poder constituinte","Princípios fundamentais","Direitos fundamentais","Organização do Estado","Poderes","Controle de constitucionalidade"]},
+ {name:"Administrativo",icon:"AD",module:"publico",color:"#239b7d",map:"https://drive.google.com/file/d/1bhjP9emHnggY_yrm1yat2YK_t2MDyN-z/view",topics:["Fontes e Estado","Organização administrativa","Agentes públicos","Poderes administrativos","Atos administrativos","Serviços públicos","Licitações e contratos","Responsabilidade e controle"]},
+ {name:"Tributário",icon:"TR",module:"publico",color:"#1d9a6c",map:"https://drive.google.com/file/d/1z8HAdvGMlmQ5tI57svAt0KvpFo7PbXWs/view",topics:["Tributo e espécies","Competência tributária","Limitações ao poder de tributar","Obrigação tributária","Crédito tributário","Lançamento","Suspensão e extinção","Impostos"]},
+ {name:"Financeiro",icon:"DF",module:"publico",color:"#3a9d88",map:"https://drive.google.com/file/d/1lr4-TP1DfLlBgiIXCFvX-EnLQAFm8I_f/view",topics:["Atividade financeira","Receita e despesa","PPA","LDO","LOA","Princípios orçamentários","Créditos adicionais","Responsabilidade fiscal"]},
+ {name:"Ambiental",icon:"AM",module:"publico",color:"#49a65e",map:"https://drive.google.com/file/d/1A2Q1WF3ohO859StrXp8sTYuKhmQmU0sF/view",topics:["Art. 225 da CF","Princípios ambientais","Competências ambientais","Bens ambientais","Prevenção e precaução","Licenciamento","Responsabilidade ambiental"]},
+ {name:"Internacional",icon:"DI",module:"complementares",color:"#8a5a44",map:"https://drive.google.com/file/d/10u6UQbFPt9ZXk6oWho7BA81sqlkhz2bG/view",topics:["Jurisdição nacional","Cooperação internacional","Arbitragem","Direito Internacional Privado","Elementos de conexão","LINDB","Decisão estrangeira"]},
+ {name:"Eleitoral",icon:"EL",module:"complementares",color:"#a86d4a",map:"https://drive.google.com/file/d/1msCn3k7N_9QZq7Rq9VUmXywdgEvixMUh/view",topics:["Princípios eleitorais","Anualidade","Sistemas eleitorais","Justiça Eleitoral","TSE e TRE","Juízes e juntas","Elegibilidade e processo eleitoral"]}
+];
+let activeModule="todos";
+function moduleColor(id){const m=subjectModules.find(x=>x.id===id);return m?m.color:"#315fdf";}
+function renderModuleTabs(){
+ const box=document.getElementById("moduleTabs");if(!box)return;
+ const tabs=[{id:"todos",name:"Todas"},...subjectModules];
+ box.innerHTML=tabs.map(t=>'<button class="'+(activeModule===t.id?'active':'')+'" data-mod="'+t.id+'">'+t.name+'</button>').join("");
+ box.querySelectorAll("[data-mod]").forEach(b=>b.onclick=()=>{activeModule=b.dataset.mod;renderModuleTabs();renderSubjects();});
+}
+function renderSubjects(){
+ const box=document.getElementById("subjectGrid");if(!box)return;
+ const list=subjects.filter(su=>activeModule==="todos"||su.module===activeModule);
+ box.innerHTML=list.map(su=>'<div class="subject-card '+(su.today?'today':'')+'" style="--subject:'+su.color+'" data-subject="'+su.name+'"><span class="subject-state">'+(su.today?'HOJE':'MAPA')+'</span><div class="subject-icon">'+su.icon+'</div><h3>'+su.name+'</h3><p>'+su.topics.slice(0,3).join(' • ')+'</p></div>').join("");
+ box.querySelectorAll("[data-subject]").forEach(card=>card.onclick=()=>openSubject(card.dataset.subject));
+}
+function openSubject(name){
+ const su=subjects.find(x=>x.name===name),d=document.getElementById("subjectDetail");if(!su||!d)return;
+ d.style.setProperty("--subject",su.color);d.classList.add("show");
+ d.innerHTML='<div class="detail-head"><div class="detail-title"><div class="detail-dot"></div><div><h3>'+su.name+'</h3><p>Principais blocos do mapa mental desta matéria</p></div></div><button class="btn ghost" id="closeSubject">Fechar</button></div><div class="topic-map">'+su.topics.map(t=>'<div class="topic-node">'+t+'</div>').join("")+'</div><div class="detail-actions"><a class="btn soft" target="_blank" href="'+su.map+'">Abrir mapa completo do Drive</a>'+(su.today?'<button class="btn primary" id="goToday">Abrir aula de hoje</button>':'')+'</div>';
+ document.getElementById("closeSubject").onclick=()=>d.classList.remove("show");
+ const go=document.getElementById("goToday");if(go)go.onclick=()=>show("estudar");
+ d.scrollIntoView({behavior:"smooth",block:"nearest"});
+}
+function renderGlobalMap(){
+ const g=document.getElementById("globalMap");if(!g)return;
+ const pos=["gm1","gm2","gm3","gm4","gm5","gm6"];
+ const lines='<div class="gm-line v gml1"></div><div class="gm-line h gml2"></div><div class="gm-line h gml3"></div><div class="gm-line h gml4"></div><div class="gm-line h gml5"></div><div class="gm-line v gml6"></div>';
+ const mods=subjectModules.map((m,i)=>'<div class="gm-module '+pos[i]+'"><h3 style="color:'+m.color+'">'+m.name+'</h3><div class="gm-subjects">'+m.subjects.map(n=>{const su=subjects.find(x=>x.name===n);return '<button class="gm-subject" style="--subject:'+su.color+'" data-map-sub="'+su.name+'">'+su.name+'</button>';}).join("")+'</div></div>').join("");
+ g.innerHTML=lines+'<div class="gm-center"><div><b>OAB 48</b><small>20 matérias</small></div></div>'+mods;
+ g.querySelectorAll("[data-map-sub]").forEach(b=>b.onclick=()=>{show("materias");openSubject(b.dataset.mapSub);});
+}
+renderModuleTabs();renderSubjects();renderGlobalMap();
 
 const qs=[
  {q:"Uma lei posterior deixa de considerar criminosa determinada conduta. Qual alternativa corresponde ao efeito indicado pela apostila?",a:["Cessam apenas as penas futuras, mas permanecem os demais efeitos penais.","Cessam execução e efeitos penais da condenação, permanecendo efeitos extrapenais.","Cessam efeitos penais e civis da condenação.","A lei só se aplica se ainda não houver trânsito em julgado."],c:1,e:"Abolitio criminis: a apostila afirma que cessam a execução e os efeitos penais, enquanto os efeitos extrapenais permanecem."},
