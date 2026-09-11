@@ -3,211 +3,345 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#0f1f36">
+<meta name="theme-color" content="#0d1c31">
 <title>OAB Study • Direito Penal</title>
 <style>
 :root{
-  --bg:#f5f1ea;--paper:#fffdfa;--ink:#172235;--muted:#6f7a8d;--navy:#0d1c31;--navy2:#173758;
+  --bg:#f5f1ea;--paper:#fffdfa;--ink:#162237;--muted:#6f7a8d;--navy:#0d1c31;--navy2:#17395f;
   --blue:#315fdf;--blue2:#eaf0ff;--gold:#b98636;--gold2:#fbf1dc;--green:#177b5a;--green2:#e9f7f1;
-  --red:#bf4856;--red2:#fff0f2;--line:#e7e0d6;--shadow:0 18px 48px rgba(22,34,53,.08)
+  --red:#bf4856;--red2:#fff0f2;--purple:#7557c9;--purple2:#f0ecff;--line:#e6dfd5;--shadow:0 18px 48px rgba(22,34,53,.08)
 }
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;background:linear-gradient(180deg,#f8f4ee,#f2ede5);color:var(--ink)}
-button{font:inherit}.app{min-height:100vh;display:grid;grid-template-columns:260px 1fr}.side{position:sticky;top:0;height:100vh;background:linear-gradient(180deg,#0c1a2e,#132e4e);color:white;padding:26px 20px;display:flex;flex-direction:column;z-index:20}
-.brand{display:flex;align-items:center;gap:12px;margin-bottom:30px}.logo{width:44px;height:44px;border-radius:14px;background:linear-gradient(145deg,#fff9ee,#cfdcff);color:#0f2038;display:grid;place-items:center;font-weight:900;font-size:18px}.brand strong{display:block;font-size:20px}.brand small{color:#9dafc6}
-.nav{display:grid;gap:7px}.nav button{border:0;background:transparent;color:#b7c4d6;text-align:left;padding:12px 13px;border-radius:12px;font-weight:750;cursor:pointer}.nav button:hover,.nav button.active{background:rgba(255,255,255,.09);color:white}.nav .dot{width:8px;height:8px;border-radius:50%;background:#61738c;display:inline-block;margin-right:9px}.nav button.active .dot{background:#8fa9ff;box-shadow:0 0 0 4px rgba(143,169,255,.12)}
-.sidefoot{margin-top:auto;border-top:1px solid rgba(255,255,255,.1);padding-top:18px}.sidefoot .label{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:#91a4bd;font-weight:800}.sidebarbar{height:6px;background:rgba(255,255,255,.12);border-radius:99px;overflow:hidden;margin-top:10px}.sidebarbar span{display:block;height:100%;width:0;background:linear-gradient(90deg,#7998ff,#c5d2ff);transition:.3s}.sidepct{display:flex;justify-content:space-between;color:#d4ddeb;font-size:12px;margin-top:8px}
-
-.main{padding:34px 40px 76px;min-width:0}.shell{max-width:1180px;margin:auto}.top{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;margin-bottom:20px}.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.14em;font-weight:900;color:var(--gold)}.top h1{font-family:Georgia,serif;font-size:42px;line-height:1.08;margin:6px 0 8px;color:#142239}.top p{margin:0;max-width:760px;color:var(--muted);line-height:1.6}.date{background:rgba(255,255,255,.76);border:1px solid var(--line);border-radius:13px;padding:11px 13px;font-weight:800;color:#4e5c73;box-shadow:0 8px 22px rgba(22,34,53,.04)}
-
-.hero{background:linear-gradient(125deg,#0d1e35,#173b61 70%,#255c98);border-radius:28px;color:white;padding:28px;box-shadow:0 24px 60px rgba(13,30,53,.18);position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:300px;height:300px;border-radius:50%;border:46px solid rgba(255,255,255,.05);right:-100px;top:-130px}.heroin{position:relative;z-index:2;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center}.tag{display:inline-flex;border:1px solid rgba(255,255,255,.13);background:rgba(255,255,255,.08);border-radius:999px;padding:7px 10px;font-size:11px;font-weight:800}.hero h2{font-family:Georgia,serif;font-size:31px;margin:13px 0 8px}.hero p{margin:0;color:#cbd8e9;line-height:1.6;max-width:760px}.ring{width:116px;height:116px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(#8eabff var(--deg,0deg),rgba(255,255,255,.13) 0);position:relative}.ring:before{content:"";position:absolute;inset:10px;border-radius:50%;background:#17375a}.ring strong{position:relative;font-size:28px}
-
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0 24px}.stat{background:rgba(255,255,255,.77);border:1px solid var(--line);border-radius:17px;padding:15px 17px;box-shadow:0 9px 25px rgba(22,34,53,.04)}.stat span{font-size:10px;text-transform:uppercase;letter-spacing:.1em;font-weight:900;color:#8993a3}.stat b{display:block;font-size:21px;margin-top:5px}.stat small{color:var(--muted)}
-
-.section{display:none}.section.active{display:block;animation:fade .22s ease}@keyframes fade{from{opacity:.5;transform:translateY(5px)}to{opacity:1;transform:none}}.sectionhead{display:flex;justify-content:space-between;align-items:flex-end;gap:14px;margin:28px 0 14px}.sectionhead h2{font-family:Georgia,serif;font-size:30px;margin:0}.sectionhead p{margin:5px 0 0;color:var(--muted)}.btn{border:0;border-radius:13px;padding:11px 15px;font-weight:850;cursor:pointer}.primary{background:var(--navy);color:white}.soft{background:var(--blue2);color:#2855c8}.ghost{background:white;border:1px solid var(--line);color:#425067}.success{background:var(--green);color:white}.btn:disabled{opacity:.45;cursor:not-allowed}
-
-.card{background:rgba(255,253,250,.95);border:1px solid var(--line);border-radius:22px;box-shadow:0 12px 32px rgba(22,34,53,.045)}.lesson-intro{display:grid;grid-template-columns:1.25fr .75fr;gap:16px}.copy{padding:25px}.copy h3{font-family:Georgia,serif;font-size:24px;margin:0 0 12px}.copy p{font-size:16px;line-height:1.75;color:#39465c;margin:10px 0}.callout{padding:22px;background:linear-gradient(135deg,#fff7e7,#fffdf8);border:1px solid #ecd7ad;border-radius:20px}.callout .big{font-family:Georgia,serif;font-size:23px;line-height:1.45;margin:7px 0}.callout small{color:#85785f;line-height:1.5;display:block}
-
-.chapter-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.chapter{padding:22px;position:relative}.chapter .num{width:31px;height:31px;border-radius:10px;background:var(--gold2);color:#976b27;display:grid;place-items:center;font-weight:900}.chapter h3{font-family:Georgia,serif;font-size:22px;margin:14px 0 8px}.chapter p{color:#46536a;line-height:1.65;margin:8px 0}.chapter ul{margin:10px 0 0;padding-left:18px;color:#46536a;line-height:1.65}.chapter .source{font-size:11px;color:#8c95a4;margin-top:14px}.chapter .mark{position:absolute;right:16px;top:16px;border:1px solid var(--line);background:white;color:#69758a;border-radius:10px;padding:7px 9px;font-weight:800;cursor:pointer}.chapter.done .mark{background:var(--green2);color:var(--green);border-color:#b8ddcf}.example{margin-top:13px;background:#f6f8fc;border-left:4px solid #93aaff;border-radius:12px;padding:12px 13px;color:#4b566b;font-size:13px;line-height:1.55}
-
-.mapcard{padding:24px;overflow:auto}.mindmap{min-width:890px;position:relative;height:570px}.mind-center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:170px;height:170px;border-radius:50%;background:linear-gradient(145deg,#173a61,#0e2038);color:white;display:grid;place-items:center;text-align:center;border:10px solid #dde6ff;box-shadow:0 22px 52px rgba(15,31,54,.2);z-index:3}.mind-center b{font-family:Georgia,serif;font-size:27px}.mind-center small{display:block;color:#bfd0e4;margin-top:5px}.line{position:absolute;background:#cbd4e6;z-index:1}.line.h{height:2px}.line.v{width:2px}.node{position:absolute;width:260px;background:white;border:1px solid var(--line);border-radius:18px;padding:16px;box-shadow:0 12px 28px rgba(22,34,53,.06);cursor:pointer;transition:.2s;z-index:2}.node:hover{transform:translateY(-3px);box-shadow:var(--shadow)}.node .chip{font-size:10px;text-transform:uppercase;letter-spacing:.1em;font-weight:900;color:var(--blue);margin-bottom:6px}.node b{font-size:17px;display:block}.node p{font-size:12px;color:var(--muted);line-height:1.5;margin:6px 0 0}.node .more{display:none;margin-top:10px;padding-top:10px;border-top:1px dashed var(--line);font-size:12px;line-height:1.6;color:#46536a}.node.open .more{display:block}.n1{left:315px;top:12px}.n2{left:18px;top:170px}.n3{right:18px;top:170px}.n4{left:18px;bottom:20px}.n5{right:18px;bottom:20px}.n6{left:315px;bottom:8px}.l1{left:444px;top:142px;height:145px}.l2{left:278px;top:255px;width:175px}.l3{left:437px;top:255px;width:175px}.l4{left:278px;top:319px;width:175px}.l5{left:437px;top:319px;width:175px}.l6{left:444px;top:335px;height:120px}
-
-.legend{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.legend span{font-size:11px;background:#f0f3f8;border:1px solid var(--line);border-radius:999px;padding:7px 10px;color:#566176;font-weight:750}
-
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:linear-gradient(180deg,#f8f4ee,#f2ede6);color:var(--ink)}
+button{font:inherit}.app{min-height:100vh;display:grid;grid-template-columns:265px 1fr}.side{position:sticky;top:0;height:100vh;background:linear-gradient(180deg,#0b182b,#153252);color:#fff;padding:26px 20px;display:flex;flex-direction:column;z-index:20}
+.brand{display:flex;align-items:center;gap:12px;margin-bottom:28px}.logo{width:44px;height:44px;border-radius:14px;background:linear-gradient(145deg,#fff9ee,#ccd9ff);color:#10203a;display:grid;place-items:center;font-weight:900}.brand strong{display:block;font-size:20px}.brand small{color:#9eb0c8}
+.nav{display:grid;gap:7px}.nav button{border:0;background:transparent;color:#b8c5d6;text-align:left;padding:12px 13px;border-radius:12px;font-weight:750;cursor:pointer}.nav button:hover,.nav button.active{background:rgba(255,255,255,.09);color:white}.nav .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#61738b;margin-right:9px}.nav button.active .dot{background:#8fa9ff;box-shadow:0 0 0 4px rgba(143,169,255,.12)}
+.sidefoot{margin-top:auto;padding-top:18px;border-top:1px solid rgba(255,255,255,.1)}.mini{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:#93a5bd;font-weight:900}.pbar{height:6px;background:rgba(255,255,255,.12);border-radius:99px;overflow:hidden;margin-top:10px}.pbar span{display:block;height:100%;width:0;background:linear-gradient(90deg,#7394ff,#c0ceff);transition:.25s}.sidepct{display:flex;justify-content:space-between;color:#d5deeb;font-size:12px;margin-top:8px}
+.main{padding:34px 40px 78px;min-width:0}.shell{max-width:1200px;margin:auto}.top{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;margin-bottom:20px}.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.14em;font-weight:900;color:var(--gold)}.top h1{font-family:Georgia,serif;font-size:42px;line-height:1.08;margin:6px 0 8px;color:#142239}.top p{margin:0;max-width:800px;color:var(--muted);line-height:1.6}.date{background:rgba(255,255,255,.76);border:1px solid var(--line);border-radius:13px;padding:11px 13px;font-weight:800;color:#4f5c73;box-shadow:0 8px 22px rgba(22,34,53,.04)}
+.hero{background:linear-gradient(125deg,#0d1e35,#173d65 68%,#275f9b);border-radius:28px;color:white;padding:29px;box-shadow:0 25px 62px rgba(13,30,53,.18);position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:300px;height:300px;border:46px solid rgba(255,255,255,.05);border-radius:50%;right:-95px;top:-135px}.heroin{position:relative;z-index:2;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center}.tag{display:inline-flex;border:1px solid rgba(255,255,255,.13);background:rgba(255,255,255,.08);border-radius:999px;padding:7px 10px;font-size:11px;font-weight:800}.hero h2{font-family:Georgia,serif;font-size:31px;margin:13px 0 8px}.hero p{margin:0;color:#cbd8e9;line-height:1.6;max-width:780px}.ring{width:118px;height:118px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(#8eabff var(--deg,0deg),rgba(255,255,255,.13) 0);position:relative}.ring:before{content:"";position:absolute;inset:10px;border-radius:50%;background:#17385c}.ring strong{position:relative;font-size:28px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0 24px}.stat{background:rgba(255,255,255,.78);border:1px solid var(--line);border-radius:17px;padding:15px 17px;box-shadow:0 9px 25px rgba(22,34,53,.04)}.stat span{font-size:10px;text-transform:uppercase;letter-spacing:.1em;font-weight:900;color:#8993a3}.stat b{display:block;font-size:21px;margin-top:5px}.stat small{color:var(--muted)}
+.section{display:none}.section.active{display:block;animation:fade .22s ease}@keyframes fade{from{opacity:.5;transform:translateY(5px)}to{opacity:1;transform:none}}.sectionhead{display:flex;justify-content:space-between;align-items:flex-end;gap:14px;margin:28px 0 14px}.sectionhead h2{font-family:Georgia,serif;font-size:30px;margin:0}.sectionhead p{margin:5px 0 0;color:var(--muted)}.btn{border:0;border-radius:13px;padding:11px 15px;font-weight:850;cursor:pointer}.primary{background:var(--navy);color:white}.soft{background:var(--blue2);color:#2855c8}.success{background:var(--green);color:white}.ghost{background:white;border:1px solid var(--line);color:#465268}.btn:disabled{opacity:.45;cursor:not-allowed}
+.card{background:rgba(255,253,250,.96);border:1px solid var(--line);border-radius:22px;box-shadow:0 12px 32px rgba(22,34,53,.045)}.introgrid{display:grid;grid-template-columns:1.1fr .9fr;gap:16px}.copy{padding:25px}.copy h3{font-family:Georgia,serif;font-size:24px;margin:0 0 12px}.copy p{font-size:16px;line-height:1.72;color:#39465c;margin:10px 0}.callout{padding:22px;background:linear-gradient(135deg,#fff7e7,#fffdf8);border:1px solid #ecd7ad;border-radius:20px}.callout .big{font-family:Georgia,serif;font-size:23px;line-height:1.45;margin:7px 0}.callout small{color:#85785f;line-height:1.5}
+.track{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.trackstep{background:white;border:1px solid var(--line);border-radius:16px;padding:15px;min-height:125px;position:relative}.trackstep em{width:27px;height:27px;border-radius:9px;background:var(--gold2);color:#976b27;display:grid;place-items:center;font-style:normal;font-weight:900}.trackstep h3{font-size:15px;margin:13px 0 6px}.trackstep p{font-size:12px;line-height:1.5;color:var(--muted);margin:0}.trackstep.done:after{content:"✓";position:absolute;right:11px;top:11px;width:23px;height:23px;border-radius:50%;background:var(--green2);color:var(--green);display:grid;place-items:center;font-weight:900}
+.module{overflow:hidden}.module-head{display:flex;justify-content:space-between;gap:16px;align-items:center;padding:18px 20px;cursor:pointer}.module-head .left{display:flex;gap:12px;align-items:center}.module-num{width:34px;height:34px;border-radius:11px;background:var(--gold2);color:#956a29;display:grid;place-items:center;font-weight:900;flex:0 0 auto}.module-title{font-weight:900;font-size:17px}.module-sub{font-size:12px;color:var(--muted);margin-top:3px}.module-toggle{color:#768197;font-weight:900}.module-body{display:none;padding:0 20px 20px;border-top:1px solid #eee8df}.module.open .module-body{display:block}.module.open .module-toggle{transform:rotate(45deg)}
+.lesson{display:grid;grid-template-columns:1fr .95fr;gap:14px;margin-top:18px}.lessonbox{background:#fafbfe;border:1px solid #e7eaf2;border-radius:16px;padding:17px}.lessonbox h4{margin:0 0 9px;font-size:14px;color:#26354e}.lessonbox p,.lessonbox li{color:#4a566b;line-height:1.65;font-size:13px}.lessonbox ul{margin:0;padding-left:18px}.law{background:#f3f6ff;border-color:#dce4ff}.law strong{color:#2e59cf}.fgvbox{background:#fff9ef;border-color:#ecd9b4}.fgvbox strong{color:#8b6427}.memory{background:#eef8f4;border-color:#cfe7dc}.memory strong{color:#146c4d}.warning{background:#fff2f4;border-color:#efc9cf}.warning strong{color:#a83846}.source{font-size:11px;color:#8c95a4;margin-top:12px}
+.tablewrap{overflow:auto}.studytable{width:100%;border-collapse:separate;border-spacing:0;min-width:760px}.studytable th{background:#f4f6fa;color:#596579;font-size:11px;text-transform:uppercase;letter-spacing:.08em;text-align:left;padding:12px;border-bottom:1px solid var(--line)}.studytable td{padding:13px;border-bottom:1px solid #eee8df;font-size:13px;line-height:1.5;vertical-align:top}.studytable tr:last-child td{border-bottom:0}
+.mapcard{padding:24px;overflow:auto}.mindmap{min-width:980px;position:relative;height:640px}.mind-center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:184px;height:184px;border-radius:50%;background:linear-gradient(145deg,#173a61,#0e2038);color:#fff;display:grid;place-items:center;text-align:center;border:10px solid #dde6ff;box-shadow:0 22px 52px rgba(15,31,54,.2);z-index:4}.mind-center b{font-family:Georgia,serif;font-size:27px}.mind-center small{display:block;color:#bfd0e4;margin-top:5px}.branchlabel{position:absolute;font-size:11px;text-transform:uppercase;letter-spacing:.12em;font-weight:900;padding:7px 10px;border-radius:999px;z-index:4}.time-label{left:85px;top:287px;background:#eef2ff;color:#3459c4}.space-label{right:85px;top:287px;background:#f2edff;color:#704ebc}
+.line{position:absolute;background:#cbd4e6;z-index:1}.line.h{height:2px}.line.v{width:2px}.node{position:absolute;width:270px;background:white;border:1px solid var(--line);border-radius:18px;padding:16px;box-shadow:0 12px 28px rgba(22,34,53,.06);cursor:pointer;transition:.2s;z-index:3}.node:hover{transform:translateY(-3px);box-shadow:var(--shadow)}.node .chip{font-size:10px;text-transform:uppercase;letter-spacing:.1em;font-weight:900;margin-bottom:6px}.time .chip{color:var(--blue)}.space .chip{color:var(--purple)}.node b{font-size:17px;display:block}.node p{font-size:12px;color:var(--muted);line-height:1.5;margin:6px 0 0}.node .more{display:none;margin-top:10px;padding-top:10px;border-top:1px dashed var(--line);font-size:12px;line-height:1.6;color:#46536a}.node.open .more{display:block}.n1{left:350px;top:10px}.n2{left:22px;top:120px}.n3{left:22px;top:340px}.n4{left:350px;bottom:8px}.n5{right:22px;top:110px}.n6{right:22px;top:330px}.n7{right:350px;bottom:8px}.n8{right:350px;top:10px}.l1{left:487px;top:140px;height:150px}.l2{left:290px;top:272px;width:200px}.l3{left:290px;top:350px;width:200px}.l4{left:487px;top:365px;height:125px}.l5{left:490px;top:270px;width:200px}.l6{left:490px;top:350px;width:200px}.l7{left:584px;top:140px;height:150px}.l8{left:584px;top:365px;height:125px}.legend{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.legend span{font-size:11px;background:#f0f3f8;border:1px solid var(--line);border-radius:999px;padding:7px 10px;color:#566176;font-weight:750}
+.casegrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.case{padding:20px}.case .badge{display:inline-flex;background:var(--gold2);color:#8f672a;border-radius:999px;padding:6px 9px;font-size:10px;font-weight:900;text-transform:uppercase}.case h3{font-family:Georgia,serif;font-size:20px;margin:13px 0 8px}.case p{font-size:13px;line-height:1.65;color:#4b566b}.case .answer{margin-top:12px;border-top:1px dashed var(--line);padding-top:12px;display:none}.case.open .answer{display:block}.case button{width:100%;margin-top:12px}
 .traplist{display:grid;gap:10px}.trap{background:white;border:1px solid var(--line);border-radius:16px;overflow:hidden}.trap button{width:100%;border:0;background:transparent;padding:16px 17px;text-align:left;display:flex;justify-content:space-between;gap:16px;font-weight:850;cursor:pointer}.trap .body{display:none;padding:0 17px 17px;color:#596477;line-height:1.6}.trap.open .body{display:block}.bad{color:var(--red)}.good{color:var(--green)}
-
-.unlock{padding:26px;text-align:center;background:linear-gradient(135deg,#f2f6ff,#fffdf8)}.unlock h3{font-family:Georgia,serif;font-size:27px;margin:0 0 8px}.unlock p{color:var(--muted);max-width:650px;margin:0 auto 17px;line-height:1.6}
-
-.quizwrap{display:none}.quizwrap.unlocked{display:block}.quizgrid{display:grid;grid-template-columns:1fr 270px;gap:16px}.quiz{padding:25px}.qtop{display:flex;justify-content:space-between;gap:12px;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.09em;font-weight:900}.qbar{height:5px;background:#eee8df;border-radius:99px;overflow:hidden;margin:14px 0 20px}.qbar span{display:block;height:100%;background:linear-gradient(90deg,#315fdf,#8da9ff);width:20%;transition:.3s}.question{font-family:Georgia,serif;font-size:25px;line-height:1.42;margin:0 0 18px}.options{display:grid;gap:9px}.option{border:1px solid var(--line);background:white;border-radius:14px;padding:13px 14px;text-align:left;display:flex;gap:10px;cursor:pointer;color:#344056;font-weight:700}.option:hover:not(:disabled){background:#f8faff;border-color:#b7c6ee}.letter{width:27px;height:27px;border-radius:9px;background:#f0ede7;display:grid;place-items:center;font-size:11px;font-weight:900;flex:0 0 auto}.option.correct{background:var(--green2);border-color:#a9d8c7;color:#126d50}.option.wrong{background:var(--red2);border-color:#efb7bd;color:#9f3541}.feedback{display:none;margin-top:14px;padding:14px;border-radius:14px;line-height:1.6;font-size:13px}.feedback.show{display:block}.feedback.ok{background:var(--green2)}.feedback.no{background:var(--red2)}.confidence{display:none;margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}.confidence.show{display:block}.confidence p{font-size:12px;color:var(--muted)}.crow{display:flex;gap:8px;flex-wrap:wrap}.crow button{border:1px solid var(--line);background:white;border-radius:10px;padding:8px 10px;font-weight:800;cursor:pointer}.crow button.sel{background:var(--navy);color:white}.qactions{display:flex;justify-content:flex-end;margin-top:16px}.score{padding:18px}.scoregrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.scorebox{border:1px solid var(--line);border-radius:13px;padding:11px;background:white}.scorebox span{font-size:10px;color:#8b94a2;text-transform:uppercase;font-weight:900}.scorebox b{display:block;font-size:22px;margin-top:4px}.score p{font-size:12px;line-height:1.6;color:var(--muted)}
-
-.result{display:none;padding:26px;text-align:center}.result.show{display:block}.result h3{font-family:Georgia,serif;font-size:30px;margin:0 0 8px}.result p{color:var(--muted)}.resultcards{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin:18px 0}.resultcards div{border:1px solid var(--line);border-radius:14px;padding:12px;background:white}.resultcards b{display:block;font-size:23px}.resultcards span{font-size:10px;text-transform:uppercase;color:var(--muted);font-weight:900}
-
-.mobile{display:none}.toast{position:fixed;left:50%;bottom:20px;transform:translate(-50%,15px);opacity:0;background:#101c30;color:white;padding:11px 14px;border-radius:11px;transition:.2s;z-index:100}.toast.show{opacity:1;transform:translate(-50%,0)}
-
-@media(max-width:980px){
- .app{grid-template-columns:1fr}.side{display:none}.main{padding:20px 16px 90px}.top{display:block}.date{display:inline-block;margin-top:12px}.heroin{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.lesson-intro,.quizgrid{grid-template-columns:1fr}.chapter-grid{grid-template-columns:1fr}.mobile{position:fixed;display:grid;grid-template-columns:repeat(5,1fr);left:8px;right:8px;bottom:8px;background:rgba(15,31,54,.97);border-radius:15px;padding:7px;z-index:50}.mobile button{border:0;background:transparent;color:#aebbd0;padding:9px 3px;border-radius:9px;font-size:10px;font-weight:800}.mobile button.active{background:rgba(255,255,255,.1);color:white}
-}
-@media(max-width:680px){
- .top h1{font-size:34px}.hero h2{font-size:27px}.stats{grid-template-columns:1fr}.mindmap{min-width:0;height:auto;display:grid;gap:10px}.mind-center,.node{position:relative!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;transform:none!important;width:100%;height:auto}.mind-center{border-radius:20px;padding:22px}.line{display:none}.resultcards{grid-template-columns:1fr 1fr}.question{font-size:22px}
-}
+.unlock{padding:26px;text-align:center;background:linear-gradient(135deg,#f2f6ff,#fffdf8)}.unlock h3{font-family:Georgia,serif;font-size:27px;margin:0 0 8px}.unlock p{color:var(--muted);max-width:680px;margin:0 auto 17px;line-height:1.6}.quizwrap{display:none}.quizwrap.unlocked{display:block}.quizgrid{display:grid;grid-template-columns:1fr 270px;gap:16px}.quiz{padding:25px}.qtop{display:flex;justify-content:space-between;gap:12px;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.09em;font-weight:900}.qbar{height:5px;background:#eee8df;border-radius:99px;overflow:hidden;margin:14px 0 20px}.qbar span{display:block;height:100%;background:linear-gradient(90deg,#315fdf,#8da9ff);width:20%;transition:.3s}.question{font-family:Georgia,serif;font-size:25px;line-height:1.42;margin:0 0 18px}.options{display:grid;gap:9px}.option{border:1px solid var(--line);background:white;border-radius:14px;padding:13px 14px;text-align:left;display:flex;gap:10px;cursor:pointer;color:#344056;font-weight:700}.option:hover:not(:disabled){background:#f8faff;border-color:#b7c6ee}.letter{width:27px;height:27px;border-radius:9px;background:#f0ede7;display:grid;place-items:center;font-size:11px;font-weight:900;flex:0 0 auto}.option.correct{background:var(--green2);border-color:#a9d8c7;color:#126d50}.option.wrong{background:var(--red2);border-color:#efb7bd;color:#9f3541}.feedback{display:none;margin-top:14px;padding:14px;border-radius:14px;line-height:1.6;font-size:13px}.feedback.show{display:block}.feedback.ok{background:var(--green2)}.feedback.no{background:var(--red2)}.confidence{display:none;margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}.confidence.show{display:block}.confidence p{font-size:12px;color:var(--muted)}.crow{display:flex;gap:8px;flex-wrap:wrap}.crow button{border:1px solid var(--line);background:white;border-radius:10px;padding:8px 10px;font-weight:800;cursor:pointer}.crow button.sel{background:var(--navy);color:white}.qactions{display:flex;justify-content:flex-end;margin-top:16px}.score{padding:18px}.scoregrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.scorebox{border:1px solid var(--line);border-radius:13px;padding:11px;background:white}.scorebox span{font-size:10px;color:#8b94a2;text-transform:uppercase;font-weight:900}.scorebox b{display:block;font-size:22px;margin-top:4px}.score p{font-size:12px;line-height:1.6;color:var(--muted)}
+.result{padding:26px;text-align:center}.result h3{font-family:Georgia,serif;font-size:30px;margin:0 0 8px}.result p{color:var(--muted)}.resultcards{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin:18px 0}.resultcards div{border:1px solid var(--line);border-radius:14px;padding:12px;background:white}.resultcards b{display:block;font-size:23px}.resultcards span{font-size:10px;text-transform:uppercase;color:var(--muted);font-weight:900}.mobile{display:none}.toast{position:fixed;left:50%;bottom:20px;transform:translate(-50%,15px);opacity:0;background:#101c30;color:white;padding:11px 14px;border-radius:11px;transition:.2s;z-index:100}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:1000px){.app{grid-template-columns:1fr}.side{display:none}.main{padding:20px 16px 92px}.top{display:block}.date{display:inline-block;margin-top:12px}.heroin{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.introgrid,.lesson,.quizgrid{grid-template-columns:1fr}.track{grid-template-columns:1fr 1fr}.casegrid{grid-template-columns:1fr}.mobile{position:fixed;display:grid;grid-template-columns:repeat(5,1fr);left:8px;right:8px;bottom:8px;background:rgba(15,31,54,.97);border-radius:15px;padding:7px;z-index:50}.mobile button{border:0;background:transparent;color:#aebbd0;padding:9px 3px;border-radius:9px;font-size:10px;font-weight:800}.mobile button.active{background:rgba(255,255,255,.1);color:white}}
+@media(max-width:680px){.top h1{font-size:34px}.hero h2{font-size:27px}.stats,.track{grid-template-columns:1fr}.mindmap{min-width:0;height:auto;display:grid;gap:10px}.mind-center,.node,.branchlabel{position:relative!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;transform:none!important;width:100%;height:auto}.mind-center{border-radius:20px;padding:22px}.line{display:none}.resultcards{grid-template-columns:1fr 1fr}.question{font-size:22px}}
 </style>
 </head>
 <body>
 <div class="app">
 <aside class="side">
-  <div class="brand"><div class="logo">O</div><div><strong>OAB Study</strong><small>Sessão guiada</small></div></div>
+  <div class="brand"><div class="logo">O</div><div><strong>OAB Study</strong><small>Aula guiada</small></div></div>
   <nav class="nav">
-    <button class="active" data-section="conteudo"><span class="dot"></span>Conteúdo</button>
+    <button class="active" data-section="estudar"><span class="dot"></span>Estudar</button>
     <button data-section="mapa"><span class="dot"></span>Mapa mental</button>
-    <button data-section="pegadinhas"><span class="dot"></span>Pegadinhas</button>
+    <button data-section="fgv"><span class="dot"></span>Casos FGV</button>
     <button data-section="questoes"><span class="dot"></span>Questões</button>
     <button data-section="resultado"><span class="dot"></span>Resultado</button>
   </nav>
-  <div class="sidefoot"><div class="label">Progresso da sessão</div><div class="sidebarbar"><span id="sideBar"></span></div><div class="sidepct"><span id="sidePct">0%</span><span>5 questões</span></div></div>
+  <div class="sidefoot"><div class="mini">Progresso da sessão</div><div class="pbar"><span id="sideBar"></span></div><div class="sidepct"><span id="sidePct">0%</span><span>5 questões</span></div></div>
 </aside>
 
 <main class="main"><div class="shell">
 <header class="top">
-  <div><div class="eyebrow">Direito Penal • Dia 5</div><h1>Lei penal no tempo e no espaço</h1><p>Abolitio criminis, retroatividade, ultratividade, tempo do crime, territorialidade e lugar do crime.</p></div>
+  <div><div class="eyebrow">Direito Penal • Fase 1</div><h1>Lei penal no tempo e no espaço</h1><p>Uma aula completa, reconstruída a partir da apostila e do mapa mental de Direito Penal do seu Drive. O mapa sintetiza a aula, não substitui a aula.</p></div>
   <div class="date">11 set 2026</div>
 </header>
 
 <section class="hero"><div class="heroin">
-  <div><span class="tag">Sessão normal • Fase 1</span><h2>Primeiro entenda a lógica. Depois memorize os artigos.</h2><p>Seu material organiza este tema em duas perguntas: <b>qual lei vale no tempo?</b> e <b>onde a lei brasileira se aplica?</b></p></div>
+  <div><span class="tag">Sessão do dia • conteúdo real do Drive</span><h2>Entender → visualizar → aplicar → testar</h2><p>Hoje o objetivo é dominar as regras de <b>aplicação da lei penal no tempo</b>, distinguir <b>tempo e lugar do crime</b> e entender quando a <b>lei brasileira alcança fatos praticados no exterior</b>.</p></div>
   <div class="ring" id="ring"><strong id="ringPct">0%</strong></div>
 </div></section>
 
 <div class="stats">
   <div class="stat"><span>Matéria</span><b>Direito Penal</b><small>Parte Geral</small></div>
   <div class="stat"><span>Tópico</span><b>Lei penal</b><small>tempo + espaço</small></div>
-  <div class="stat"><span>Meta</span><b>5 questões</b><small>após o conteúdo</small></div>
-  <div class="stat"><span>Revisões</span><b>0</b><small>sessão nova</small></div>
+  <div class="stat"><span>Estrutura</span><b>8 módulos</b><small>+ mapa + FGV</small></div>
+  <div class="stat"><span>Questões</span><b>5</b><small>liberadas no fim</small></div>
 </div>
 
-<section id="conteudo" class="section active">
-  <div class="sectionhead"><div><h2>Conteúdo da aula</h2><p>Baseado na apostila e no mapa mental de Direito Penal do seu Drive.</p></div></div>
+<section id="estudar" class="section active">
+  <div class="sectionhead"><div><h2>Roteiro da aula</h2><p>O conteúdo não foi reduzido a um resumo. Você pode abrir cada módulo conforme avança.</p></div></div>
+  <div class="track">
+    <div class="trackstep"><em>1</em><h3>Lei no tempo</h3><p>Regra, retroatividade e ultratividade.</p></div>
+    <div class="trackstep"><em>2</em><h3>Abolitio</h3><p>Efeitos penais, extrapenais e trânsito.</p></div>
+    <div class="trackstep"><em>3</em><h3>Tempo/lugar</h3><p>Atividade × ubiquidade.</p></div>
+    <div class="trackstep"><em>4</em><h3>Lei no espaço</h3><p>Territorialidade e extraterritorialidade.</p></div>
+    <div class="trackstep"><em>5</em><h3>Aplicar</h3><p>Casos FGV e questões.</p></div>
+  </div>
 
-  <div class="lesson-intro">
+  <div class="sectionhead"><div><h2>Visão central</h2><p>A ideia que organiza o tema inteiro.</p></div></div>
+  <div class="introgrid">
     <div class="card copy">
-      <h3>A lógica que organiza tudo</h3>
-      <p><b>Regra:</b> a lei penal vale durante sua vigência. Mas a própria Constituição e o Código Penal admitem que a lei mais favorável alcance fatos anteriores.</p>
-      <p>Daí surgem os quatro nomes que você precisa dominar: <b>abolitio criminis</b>, <b>novatio legis in mellius</b>, <b>novatio legis in pejus</b> e <b>novatio legis incriminadora</b>.</p>
+      <h3>Qual lei vale e onde ela vale?</h3>
+      <p>O tema gira em torno de duas perguntas: <b>qual lei penal deve ser usada no tempo</b> e <b>até onde a lei penal brasileira alcança o fato</b>.</p>
+      <p>No tempo, a regra é a vigência. A exceção mais importante é a <b>retroatividade da lei penal mais benéfica</b>. No espaço, a regra é a <b>territorialidade</b>, com hipóteses legais de <b>extraterritorialidade</b>.</p>
     </div>
-    <div class="callout"><div class="eyebrow">Frase-chave</div><div class="big">Lei penal mais benéfica pode voltar no tempo. Lei penal mais grave, em regra, não.</div><small>Fonte do seu material: art. 2º do CP e art. 5º, XL, da Constituição.</small></div>
+    <div class="callout"><div class="eyebrow">Quatro âncoras</div><div class="big">Mais benéfica retroage. Abolitio extingue efeitos penais. Tempo = atividade. Lugar = ubiquidade.</div><small>Essas quatro relações aparecem repetidamente na apostila e no mapa.</small></div>
   </div>
 
-  <div class="sectionhead"><div><h2>1. Lei penal no tempo</h2><p>Comece por aqui.</p></div></div>
-  <div class="chapter-grid">
-    <article class="card chapter" data-chapter="abolitio"><button class="mark">Marcar lido</button><div class="num">1</div><h3>Abolitio criminis</h3>
-      <p>Acontece quando uma lei nova <b>deixa de considerar crime</b> um fato que antes era criminoso.</p>
-      <ul><li>cessa a execução da pena;</li><li>cessam os <b>efeitos penais</b> da condenação;</li><li>os <b>efeitos extrapenais permanecem</b>;</li><li>aplica-se mesmo após trânsito em julgado.</li></ul>
-      <div class="example"><b>Exemplo:</b> alguém foi condenado por uma conduta. Depois surge lei que deixa de criminalizá-la. A punição penal não continua, mas eventual obrigação civil não desaparece automaticamente.</div>
-      <div class="source">Apostila: art. 2º, caput, CP.</div>
-    </article>
+  <div class="sectionhead"><div><h2>Módulos completos</h2><p>Abra os módulos e marque como lidos apenas quando realmente terminar.</p></div></div>
 
-    <article class="card chapter" data-chapter="retro"><button class="mark">Marcar lido</button><div class="num">2</div><h3>Retroatividade e ultratividade</h3>
-      <p><b>Novatio legis in mellius:</b> lei posterior mais favorável. Ela retroage e alcança fatos anteriores, inclusive condenações transitadas em julgado.</p>
-      <p><b>Ultratividade:</b> uma lei revogada, por ser mais favorável, continua produzindo efeitos para fatos praticados durante sua vigência.</p>
-      <p><b>Novatio legis in pejus:</b> lei nova mais severa. Não retroage.</p>
-      <p><b>Novatio legis incriminadora:</b> passa a considerar crime fato antes não incriminado. Também não retroage.</p>
-      <div class="source">Mapa mental: art. 2º do CP + art. 5º, XL, CF.</div>
-    </article>
-
-    <article class="card chapter" data-chapter="permanente"><button class="mark">Marcar lido</button><div class="num">3</div><h3>Crime permanente e continuado</h3>
-      <p>Seu material destaca a <b>Súmula 711 do STF</b>: a lei penal mais grave aplica-se ao crime continuado ou permanente se entrar em vigor <b>antes de cessar</b> a continuidade ou permanência.</p>
-      <div class="example"><b>Exemplo da apostila:</b> no sequestro, a privação da liberdade continua no tempo. Se uma lei mais grave entra em vigor enquanto a vítima ainda está em cativeiro, o material ensina que essa nova lei se aplica.</div>
-      <div class="source">Apostila e mapa: Súmula 711 do STF.</div>
-    </article>
-
-    <article class="card chapter" data-chapter="temporaria"><button class="mark">Marcar lido</button><div class="num">4</div><h3>Lei temporária e excepcional</h3>
-      <p><b>Lei temporária:</b> nasce com período determinado de duração.</p>
-      <p><b>Lei excepcional:</b> dura enquanto existir uma situação anormal que justificou sua edição.</p>
-      <p>Segundo seu mapa, ambas são <b>autorrevogáveis</b> e possuem <b>ultratividade</b>.</p>
-      <div class="source">Mapa mental: art. 3º do CP.</div>
-    </article>
+  <div class="card module" data-module="m1">
+    <div class="module-head"><div class="left"><div class="module-num">1</div><div><div class="module-title">Lei penal no tempo: regra, retroatividade e ultratividade</div><div class="module-sub">Art. 2º do CP + art. 5º, XL, CF</div></div></div><div class="module-toggle">＋</div></div>
+    <div class="module-body">
+      <div class="lesson">
+        <div class="lessonbox">
+          <h4>Regra geral</h4>
+          <p>A atividade da lei penal ocorre durante o período de sua vigência. Em princípio, o fato é regido pela lei vigente quando praticado.</p>
+          <p>O próprio material, porém, destaca duas projeções temporais importantes:</p>
+          <ul><li><b>retroatividade</b>: lei posterior mais benéfica volta e alcança fatos anteriores;</li><li><b>ultratividade</b>: lei revogada mais favorável continua sendo aplicada a fatos praticados enquanto estava em vigor.</li></ul>
+        </div>
+        <div class="lessonbox law">
+          <h4>Quatro situações que você precisa distinguir</h4>
+          <ul><li><strong>Novatio legis incriminadora:</strong> cria crime para fato antes não incriminado. Não retroage.</li><li><strong>Novatio legis in pejus:</strong> nova lei é mais severa. Não retroage.</li><li><strong>Novatio legis in mellius:</strong> nova lei favorece o agente. Retroage.</li><li><strong>Ultratividade benéfica:</strong> lei antiga, mesmo revogada, continua sendo usada se for mais favorável ao fato praticado em sua vigência.</li></ul>
+        </div>
+      </div>
+      <div class="lesson">
+        <div class="lessonbox memory"><h4>O que memorizar</h4><p><strong>Lei mais benéfica atravessa o tempo em favor do réu.</strong> Ela pode retroagir ou, se for a lei antiga mais favorável, continuar produzindo efeitos por ultratividade.</p></div>
+        <div class="lessonbox warning"><h4>Pegadinha</h4><p><strong>Lei mais grave não retroage.</strong> A exceção aparente envolvendo crime permanente/continuado não é tratada pelo material como retroatividade, porque o delito ainda está em curso.</p></div>
+      </div>
+      <div class="source">Base do Drive: mapa mental “Lei penal no tempo” e apostila de Direito Penal.</div>
+      <button class="btn ghost mark-module">Marcar módulo como lido</button>
+    </div>
   </div>
 
-  <div class="sectionhead"><div><h2>2. Tempo e lugar do crime</h2><p>Não confunda as teorias.</p></div></div>
-  <div class="chapter-grid">
-    <article class="card chapter" data-chapter="tempo"><button class="mark">Marcar lido</button><div class="num">5</div><h3>Tempo do crime</h3>
-      <p>O Código Penal adota a <b>teoria da atividade</b>.</p>
-      <p>Isso significa: considera-se praticado o crime no momento da <b>ação ou omissão</b>, mesmo que o resultado aconteça depois.</p>
-      <div class="example"><b>Macete:</b> TEMPO = ATIVIDADE.</div>
-      <div class="source">Apostila e mapa: art. 4º do CP.</div>
-    </article>
-
-    <article class="card chapter" data-chapter="lugar"><button class="mark">Marcar lido</button><div class="num">6</div><h3>Lugar do crime</h3>
-      <p>Para o <b>lugar</b>, o CP adota a <b>teoria da ubiquidade ou mista</b>.</p>
-      <p>É lugar do crime tanto onde ocorreu a ação/omissão quanto onde o resultado ocorreu ou deveria ocorrer.</p>
-      <div class="example"><b>Macete:</b> LUGAR = UBIQUIDADE.</div>
-      <div class="source">Apostila e mapa: art. 6º do CP.</div>
-    </article>
+  <div class="card module" data-module="m2">
+    <div class="module-head"><div class="left"><div class="module-num">2</div><div><div class="module-title">Abolitio criminis</div><div class="module-sub">Art. 2º, caput, CP • extinção da punibilidade</div></div></div><div class="module-toggle">＋</div></div>
+    <div class="module-body">
+      <div class="lesson">
+        <div class="lessonbox">
+          <h4>Conceito</h4>
+          <p>Acontece quando uma lei nova <b>deixa de considerar criminosa</b> uma conduta que antes era tipificada.</p>
+          <ul><li>cessa a execução da pena;</li><li>cessam os <b>efeitos penais</b> da sentença condenatória;</li><li>os <b>efeitos extrapenais</b> permanecem;</li><li>aplica-se mesmo a condenação já transitada em julgado.</li></ul>
+        </div>
+        <div class="lessonbox fgvbox">
+          <h4>Consequência cobrada pela FGV</h4>
+          <p>A apostila usa como exemplo uma condenação por crime posteriormente revogado: a condenação não pode continuar produzindo efeito penal para reincidência. O ponto central é que a abolitio elimina os efeitos penais.</p>
+        </div>
+      </div>
+      <div class="lesson">
+        <div class="lessonbox memory"><h4>Memória curta</h4><p><strong>Abolitio = o crime desaparece para o Direito Penal.</strong> O que permanece fora da esfera penal, como efeito civil, não é automaticamente apagado.</p></div>
+        <div class="lessonbox warning"><h4>Erro clássico</h4><p>Dizer que a abolitio apaga “todos os efeitos da condenação”. O material distingue expressamente: <strong>efeitos penais cessam; extrapenais permanecem.</strong></p></div>
+      </div>
+      <div class="source">Base do Drive: item “Abolitio criminis”, art. 2º, caput, CP, e exemplo comentado da apostila.</div>
+      <button class="btn ghost mark-module">Marcar módulo como lido</button>
+    </div>
   </div>
 
-  <div class="sectionhead"><div><h2>3. Aplicação da lei no espaço</h2><p>Territorialidade primeiro, extraterritorialidade depois.</p></div></div>
-  <div class="chapter-grid">
-    <article class="card chapter" data-chapter="territorialidade"><button class="mark">Marcar lido</button><div class="num">7</div><h3>Territorialidade</h3>
-      <p>Regra do art. 5º do CP: aplica-se a <b>lei brasileira</b> ao crime cometido no território nacional, sem prejuízo de convenções, tratados e regras internacionais.</p>
-      <p>Seu mapa também inclui como território brasileiro por equiparação determinadas aeronaves e embarcações brasileiras.</p>
-      <div class="source">Apostila e mapa: art. 5º do CP.</div>
-    </article>
-
-    <article class="card chapter" data-chapter="extraterritorialidade"><button class="mark">Marcar lido</button><div class="num">8</div><h3>Extraterritorialidade</h3>
-      <p>É a aplicação da lei brasileira a crimes cometidos <b>no estrangeiro</b>.</p>
-      <p>Seu mapa divide em <b>incondicionada</b> (art. 7º, I) e <b>condicionada</b> (art. 7º, II).</p>
-      <p>Na condicionada, a apostila destaca a necessidade de cumprir simultaneamente as condições do §2º, inclusive a chamada <b>dupla tipicidade</b>.</p>
-      <div class="example"><b>Exemplo da apostila:</b> brasileira pratica no exterior uma conduta que é crime no Brasil, mas não é crime no país do fato. Falta uma das condições da extraterritorialidade condicionada.</div>
-      <div class="source">Apostila e mapa: art. 7º do CP.</div>
-    </article>
+  <div class="card module" data-module="m3">
+    <div class="module-head"><div class="left"><div class="module-num">3</div><div><div class="module-title">Crime permanente, crime continuado e lei nova mais grave</div><div class="module-sub">Súmula 711 do STF</div></div></div><div class="module-toggle">＋</div></div>
+    <div class="module-body">
+      <div class="lesson">
+        <div class="lessonbox">
+          <h4>Crime permanente</h4>
+          <p>É aquele cuja consumação se prolonga no tempo por vontade do agente. O exemplo da apostila é a <b>extorsão mediante sequestro</b>.</p>
+          <p>Se a lei mais grave entra em vigor <b>antes de cessar a permanência</b>, o material aplica a nova lei.</p>
+        </div>
+        <div class="lessonbox law">
+          <h4>Súmula 711</h4>
+          <p>A apostila resume a orientação: a lei penal mais grave aplica-se ao crime continuado ou permanente se sua vigência começar antes de cessar a continuidade ou a permanência.</p>
+          <p>O raciocínio pedagógico do material é: <strong>não há retroatividade porque a infração ainda está em curso.</strong></p>
+        </div>
+      </div>
+      <div class="lesson">
+        <div class="lessonbox fgvbox"><h4>Caso da apostila</h4><p>Vítima permanece em cativeiro por cinco dias. No terceiro dia entra em vigor lei que aumenta a pena. Como a permanência não terminou, a apostila aplica a nova lei.</p></div>
+        <div class="lessonbox warning"><h4>Não confunda</h4><p><strong>Ubiquidade</strong> trata do lugar do crime, não do tempo. Essa troca aparece na questão comentada do material.</p></div>
+      </div>
+      <div class="source">Base do Drive: questão FGV sobre sequestro, resumo esquemático e Súmula 711.</div>
+      <button class="btn ghost mark-module">Marcar módulo como lido</button>
+    </div>
   </div>
 
-  <div class="sectionhead"><div><h2>Terminou a leitura?</h2><p>O quiz só abre quando você concluir o conteúdo.</p></div></div>
-  <div class="card unlock">
-    <h3>Antes das questões, passe pelo mapa mental.</h3>
-    <p>Você pode marcar os capítulos à medida que lê. Quando estiver pronto, abra o mapa, revise as conexões e depois clique em “Terminei o conteúdo”.</p>
-    <button class="btn primary" data-go="mapa">Abrir mapa mental</button>
+  <div class="card module" data-module="m4">
+    <div class="module-head"><div class="left"><div class="module-num">4</div><div><div class="module-title">Leis temporárias e excepcionais</div><div class="module-sub">Art. 3º do CP</div></div></div><div class="module-toggle">＋</div></div>
+    <div class="module-body">
+      <div class="lesson">
+        <div class="lessonbox">
+          <h4>Lei temporária</h4><p>É editada com <b>prazo previamente determinado</b> de duração.</p>
+        </div>
+        <div class="lessonbox">
+          <h4>Lei excepcional</h4><p>É criada para vigorar enquanto durar uma <b>situação anormal</b> que justificou sua edição.</p>
+        </div>
+      </div>
+      <div class="lesson">
+        <div class="lessonbox memory"><h4>Características destacadas no mapa</h4><p>Ambas são apresentadas como <strong>autorrevogáveis</strong> e dotadas de <strong>ultratividade</strong>.</p></div>
+        <div class="lessonbox warning"><h4>Por que isso importa</h4><p>O fim formal da vigência não impede que a lei continue sendo aplicada aos fatos praticados enquanto ela vigorava.</p></div>
+      </div>
+      <div class="source">Base do Drive: mapa mental “Lei temporária e lei excepcional”.</div>
+      <button class="btn ghost mark-module">Marcar módulo como lido</button>
+    </div>
   </div>
+
+  <div class="card module" data-module="m5">
+    <div class="module-head"><div class="left"><div class="module-num">5</div><div><div class="module-title">Tempo do crime × lugar do crime</div><div class="module-sub">Arts. 4º e 6º do CP</div></div></div><div class="module-toggle">＋</div></div>
+    <div class="module-body">
+      <div class="tablewrap">
+        <table class="studytable">
+          <thead><tr><th>Pergunta</th><th>Teoria</th><th>Regra</th><th>Macete</th></tr></thead>
+          <tbody>
+            <tr><td><b>Quando</b> o crime é considerado praticado?</td><td><b>Teoria da atividade</b></td><td>Momento da ação ou omissão, ainda que o resultado ocorra depois.</td><td><b>TEMPO = ATIVIDADE</b></td></tr>
+            <tr><td><b>Onde</b> o crime é considerado praticado?</td><td><b>Teoria da ubiquidade ou mista</b></td><td>Lugar da ação/omissão, no todo ou em parte, e também onde o resultado ocorreu ou deveria ocorrer.</td><td><b>LUGAR = UBIQUIDADE</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="lesson">
+        <div class="lessonbox warning"><h4>Pegadinha direta</h4><p>Trocar atividade e ubiquidade. A própria apostila comenta que ubiquidade se refere ao <strong>lugar</strong>, não ao tempo.</p></div>
+        <div class="lessonbox memory"><h4>Decoração segura</h4><p><strong>TA-LU:</strong> <b>T</b>empo = <b>A</b>tividade; <b>LU</b>gar = ubiquidade. Use qualquer macete que impeça a inversão.</p></div>
+      </div>
+      <div class="source">Base do Drive: arts. 4º e 6º do CP, resumo esquemático da apostila e mapa mental.</div>
+      <button class="btn ghost mark-module">Marcar módulo como lido</button>
+    </div>
+  </div>
+
+  <div class="card module" data-module="m6">
+    <div class="module-head"><div class="left"><div class="module-num">6</div><div><div class="module-title">Territorialidade e território brasileiro por equiparação</div><div class="module-sub">Art. 5º do CP</div></div></div><div class="module-toggle">＋</div></div>
+    <div class="module-body">
+      <div class="lesson">
+        <div class="lessonbox">
+          <h4>Regra da territorialidade</h4>
+          <p>Aplica-se a lei brasileira ao crime cometido no território nacional, sem prejuízo de convenções, tratados e regras internacionais.</p>
+        </div>
+        <div class="lessonbox law">
+          <h4>Território por equiparação no mapa</h4>
+          <ul><li>aeronaves e embarcações brasileiras de natureza pública ou a serviço do governo: o mapa destaca a aplicação da lei brasileira onde estiverem;</li><li>aeronaves e embarcações brasileiras privadas: o mapa destaca alto-mar ou sobrevoo de alto-mar.</li></ul>
+        </div>
+      </div>
+      <div class="lesson">
+        <div class="lessonbox">
+          <h4>Navios estrangeiros em águas brasileiras</h4>
+          <p>O mapa diferencia:</p><ul><li><b>públicos:</b> lei da bandeira que ostentam;</li><li><b>privados:</b> lei brasileira.</li></ul>
+        </div>
+        <div class="lessonbox warning"><h4>Não pare na regra</h4><p>Territorialidade é a regra, mas não significa que a lei brasileira nunca possa alcançar fatos cometidos no exterior. É aí que entra o art. 7º.</p></div>
+      </div>
+      <div class="source">Base do Drive: mapa “Territorialidade / Aplicação da lei brasileira”.</div>
+      <button class="btn ghost mark-module">Marcar módulo como lido</button>
+    </div>
+  </div>
+
+  <div class="card module" data-module="m7">
+    <div class="module-head"><div class="left"><div class="module-num">7</div><div><div class="module-title">Extraterritorialidade incondicionada</div><div class="module-sub">Art. 7º, I, CP</div></div></div><div class="module-toggle">＋</div></div>
+    <div class="module-body">
+      <div class="lesson">
+        <div class="lessonbox">
+          <h4>Ideia</h4>
+          <p>A lei brasileira alcança determinados crimes cometidos no estrangeiro. No bloco incondicionado, o material apresenta a incidência independentemente das condições do §2º.</p>
+        </div>
+        <div class="lessonbox law">
+          <h4>Hipóteses listadas na apostila/mapa</h4>
+          <ul>
+            <li>crime contra a vida ou liberdade do Presidente da República;</li>
+            <li>crime contra patrimônio ou fé pública da União, DF, Estado, Território, Município, empresa pública, sociedade de economia mista, autarquia ou fundação instituída pelo poder público;</li>
+            <li>crime contra a Administração Pública, por quem está a seu serviço;</li>
+            <li>genocídio, quando o agente for brasileiro ou domiciliado no Brasil.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="lesson">
+        <div class="lessonbox fgvbox"><h4>Exemplos que aparecem no mapa</h4><p>INSS, Banco Central, Petrobras, Caixa Econômica Federal e Correios são citados para ajudar a visualizar entes protegidos na hipótese patrimonial/fé pública.</p></div>
+        <div class="lessonbox warning"><h4>Detalhe do §1º destacado pela apostila</h4><p>Nos casos do inciso I, o material registra a aplicação da lei brasileira ainda que o agente tenha sido absolvido ou condenado no estrangeiro.</p></div>
+      </div>
+      <div class="source">Base do Drive: art. 7º, I e §1º, transcritos na apostila, e mapa mental.</div>
+      <button class="btn ghost mark-module">Marcar módulo como lido</button>
+    </div>
+  </div>
+
+  <div class="card module" data-module="m8">
+    <div class="module-head"><div class="left"><div class="module-num">8</div><div><div class="module-title">Extraterritorialidade condicionada e estrangeiro contra brasileiro</div><div class="module-sub">Art. 7º, II, §§2º e 3º, CP</div></div></div><div class="module-toggle">＋</div></div>
+    <div class="module-body">
+      <div class="lesson">
+        <div class="lessonbox law">
+          <h4>Crimes do art. 7º, II, segundo a apostila</h4>
+          <ul><li>crimes que, por tratado ou convenção, o Brasil se obrigou a reprimir;</li><li>crimes praticados por brasileiro;</li><li>crimes praticados em aeronaves ou embarcações brasileiras mercantes ou privadas, em território estrangeiro, quando lá não sejam julgados.</li></ul>
+        </div>
+        <div class="lessonbox">
+          <h4>As 5 condições do §2º</h4>
+          <ol style="margin:0;padding-left:20px;color:#4a566b;line-height:1.65;font-size:13px">
+            <li>entrar o agente no território nacional;</li>
+            <li>o fato ser punível também no país em que foi praticado;</li>
+            <li>o crime estar entre aqueles pelos quais a lei brasileira autoriza extradição;</li>
+            <li>não ter o agente sido absolvido no estrangeiro nem ter ali cumprido a pena;</li>
+            <li>não ter sido perdoado no estrangeiro nem estar extinta a punibilidade segundo a lei mais favorável.</li>
+          </ol>
+        </div>
+      </div>
+      <div class="lesson">
+        <div class="lessonbox fgvbox">
+          <h4>Dupla tipicidade</h4>
+          <p>A apostila destaca especialmente a condição nº 2: o fato precisa ser punível também no país onde foi praticado. Sem isso, não se completa a extraterritorialidade condicionada.</p>
+          <p>É exatamente a lógica usada na questão da brasileira que pratica no exterior uma conduta criminosa no Brasil, mas não tipificada no país do fato.</p>
+        </div>
+        <div class="lessonbox warning">
+          <h4>Estrangeiro contra brasileiro no exterior</h4>
+          <p>Além das condições do §2º, o mapa acrescenta duas exigências do §3º:</p>
+          <ul><li>não ter sido pedida ou ter sido negada a extradição;</li><li>haver requisição do Ministro da Justiça.</li></ul>
+        </div>
+      </div>
+      <div class="source">Base do Drive: art. 7º, II, §§2º e 3º, questão FGV e resumo esquemático da apostila.</div>
+      <button class="btn ghost mark-module">Marcar módulo como lido</button>
+    </div>
+  </div>
+
+  <div class="sectionhead"><div><h2>Próximo passo</h2><p>Quando terminar os módulos, vá para o mapa mental.</p></div></div>
+  <div class="card unlock"><h3>A aula é o conteúdo. O mapa é a visão aérea.</h3><p>Depois de ler, use o mapa para conferir se consegue enxergar as relações sem depender do texto longo.</p><button class="btn primary" data-go="mapa">Abrir mapa mental</button></div>
 </section>
 
 <section id="mapa" class="section">
-  <div class="sectionhead"><div><h2>Mapa mental visual</h2><p>Este mapa foi reconstruído a partir do mapa de Direito Penal do seu Drive.</p></div><button class="btn soft" id="markMap">Marcar mapa como revisado ✓</button></div>
-
+  <div class="sectionhead"><div><h2>Mapa mental da aula</h2><p>Construído a partir do mapa do Drive, agora conectado ao conteúdo completo.</p></div><button class="btn soft" id="markMap">Marcar mapa como revisado ✓</button></div>
   <div class="card mapcard">
     <div class="mindmap">
-      <div class="line v l1"></div><div class="line h l2"></div><div class="line h l3"></div><div class="line h l4"></div><div class="line h l5"></div><div class="line v l6"></div>
+      <div class="line v l1"></div><div class="line h l2"></div><div class="line h l3"></div><div class="line v l4"></div><div class="line h l5"></div><div class="line h l6"></div><div class="line v l7"></div><div class="line v l8"></div>
       <div class="mind-center"><div><b>Lei Penal</b><small>tempo + espaço</small></div></div>
+      <div class="branchlabel time-label">NO TEMPO</div><div class="branchlabel space-label">NO ESPAÇO</div>
 
-      <div class="node n1"><div class="chip">Tempo</div><b>Retroatividade</b><p>Lei mais benéfica pode alcançar fatos anteriores.</p><div class="more">Novatio legis in mellius retroage. Lei mais grave e lei incriminadora, em regra, não retroagem.</div></div>
-      <div class="node n2"><div class="chip">Extinção</div><b>Abolitio criminis</b><p>Lei nova deixa de considerar crime.</p><div class="more">Cessam efeitos penais e execução. Efeitos extrapenais permanecem.</div></div>
-      <div class="node n3"><div class="chip">Continuidade</div><b>Permanente / continuado</b><p>Súmula 711 do STF.</p><div class="more">Lei mais grave pode incidir se vigente antes de cessar a permanência ou continuidade.</div></div>
-      <div class="node n4"><div class="chip">Momento</div><b>Tempo do crime</b><p>Teoria da atividade.</p><div class="more">Momento da ação ou omissão. Art. 4º do CP.</div></div>
-      <div class="node n5"><div class="chip">Local</div><b>Lugar do crime</b><p>Teoria da ubiquidade.</p><div class="more">Lugar da conduta e também do resultado. Art. 6º do CP.</div></div>
-      <div class="node n6"><div class="chip">Espaço</div><b>Territorialidade</b><p>Lei brasileira no território nacional.</p><div class="more">Art. 5º do CP. O mapa também destaca hipóteses de território por equiparação e extraterritorialidade do art. 7º.</div></div>
+      <div class="node time n1"><div class="chip">Regra temporal</div><b>Retroatividade / ultratividade</b><p>Lei mais benéfica pode atravessar o tempo.</p><div class="more">In mellius retroage; lei antiga mais benéfica pode ter ultratividade. In pejus e incriminadora não retroagem.</div></div>
+      <div class="node time n2"><div class="chip">Extinção</div><b>Abolitio criminis</b><p>Fato deixa de ser crime.</p><div class="more">Cessam execução e efeitos penais. Efeitos extrapenais permanecem. Alcança trânsito em julgado.</div></div>
+      <div class="node time n3"><div class="chip">Súmula 711</div><b>Permanente / continuado</b><p>Lei mais grave pode incidir enquanto o delito ainda está em curso.</p><div class="more">O material usa o sequestro em andamento para mostrar por que a nova lei pode ser aplicada.</div></div>
+      <div class="node time n4"><div class="chip">Arts. 3º e 4º</div><b>Temporária + tempo do crime</b><p>Ultratividade; tempo = atividade.</p><div class="more">Lei temporária/excepcional mantém aplicação aos fatos de sua vigência. Tempo do crime é o momento da ação/omissão.</div></div>
+
+      <div class="node space n8"><div class="chip">Art. 6º</div><b>Lugar do crime</b><p>Ubiquidade ou teoria mista.</p><div class="more">Lugar da conduta e também do resultado, realizado ou esperado.</div></div>
+      <div class="node space n5"><div class="chip">Art. 5º</div><b>Territorialidade</b><p>Lei brasileira no território nacional.</p><div class="more">Inclui as hipóteses de território por equiparação destacadas no mapa.</div></div>
+      <div class="node space n6"><div class="chip">Art. 7º, I</div><b>Extraterritorialidade incondicionada</b><p>Hipóteses sensíveis protegidas pela lei brasileira.</p><div class="more">Presidente; patrimônio/fé pública de entes públicos; Administração Pública; genocídio nas condições do inciso.</div></div>
+      <div class="node space n7"><div class="chip">Art. 7º, II</div><b>Extraterritorialidade condicionada</b><p>3 grupos + 5 condições.</p><div class="more">Inclui dupla tipicidade. Estrangeiro contra brasileiro exige ainda as duas condições adicionais do §3º.</div></div>
     </div>
-    <div class="legend"><span>TEMPO = atividade</span><span>LUGAR = ubiquidade</span><span>MAIS BENÉFICA = retroage</span><span>ABOLITIO = efeitos penais cessam</span></div>
+    <div class="legend"><span>TEMPO = atividade</span><span>LUGAR = ubiquidade</span><span>BENÉFICA = retroage</span><span>ABOLITIO = efeitos penais cessam</span><span>CONDICIONADA = 5 condições</span></div>
   </div>
 
-  <div class="sectionhead"><div><h2>Quando estiver pronto</h2><p>Confirme que terminou o conteúdo e libere as questões.</p></div></div>
-  <div class="card unlock">
-    <h3>Conteúdo primeiro. Questões depois.</h3>
-    <p>Ao liberar o quiz, você responde uma questão por vez e ainda informa se sabia, ficou em dúvida ou chutou.</p>
-    <button class="btn success" id="unlockQuiz">Terminei o conteúdo • liberar questões</button>
-  </div>
+  <div class="sectionhead"><div><h2>Pronto para aplicar?</h2><p>Antes do quiz final, veja os três casos-base da apostila.</p></div></div>
+  <div class="card unlock"><h3>Agora entram os casos FGV.</h3><p>Eles mostram como a teoria vira alternativa de prova.</p><button class="btn primary" data-go="fgv">Ver casos FGV</button></div>
 </section>
 
-<section id="pegadinhas" class="section">
-  <div class="sectionhead"><div><h2>Pegadinhas do tópico</h2><p>Abra cada item.</p></div></div>
-  <div class="traplist">
-    <div class="trap"><button>“A abolitio criminis apaga também os <span class="bad">efeitos civis</span>.” <b>＋</b></button><div class="body"><span class="bad">Errado segundo a sua apostila.</span> Cessam os efeitos penais, enquanto os extrapenais permanecem.</div></div>
-    <div class="trap"><button>“Lei nova mais benéfica não alcança condenação <span class="bad">transitada em julgado</span>.” <b>＋</b></button><div class="body"><span class="bad">Errado.</span> O seu material destaca expressamente que a lei posterior favorável alcança fatos anteriores mesmo com trânsito em julgado.</div></div>
-    <div class="trap"><button>“Tempo do crime = teoria da <span class="bad">ubiquidade</span>.” <b>＋</b></button><div class="body">Troca clássica: <span class="good">tempo = atividade</span>; <span class="good">lugar = ubiquidade</span>.</div></div>
-    <div class="trap"><button>“Lei mais grave jamais se aplica a crime permanente em andamento.” <b>＋</b></button><div class="body">Seu material destaca a Súmula 711: se a vigência da lei mais grave é anterior à cessação da permanência ou continuidade, ela se aplica.</div></div>
-    <div class="trap"><button>“Territorialidade impede qualquer aplicação da lei brasileira a fatos no exterior.” <b>＋</b></button><div class="body"><span class="bad">Errado.</span> O próprio mapa traz hipóteses de extraterritorialidade no art. 7º do CP.</div></div>
+<section id="fgv" class="section">
+  <div class="sectionhead"><div><h2>Casos FGV da apostila</h2><p>Parafraseados para você treinar o raciocínio sem perder a lógica original do material.</p></div></div>
+  <div class="casegrid">
+    <div class="card case"><span class="badge">Abolitio</span><h3>Lei deixa de considerar a conduta criminosa</h3><p>Um condenado definitivo e outro réu em processo praticaram o mesmo crime. Depois surge lei descriminalizando a conduta.</p><button class="btn soft case-btn">Ver raciocínio</button><div class="answer"><p><b>Aplicação:</b> a abolitio alcança os dois. No condenado, cessam os efeitos penais, inclusive aqueles relevantes para reincidência. Os efeitos extrapenais permanecem.</p></div></div>
+    <div class="card case"><span class="badge">Súmula 711</span><h3>Lei mais grave surge durante o sequestro</h3><p>A vítima permanece em cativeiro por vários dias. No meio da permanência entra em vigor lei que aumenta a pena.</p><button class="btn soft case-btn">Ver raciocínio</button><div class="answer"><p><b>Aplicação:</b> o crime permanente ainda está em execução. O material aplica a lei nova mais grave conforme a Súmula 711.</p></div></div>
+    <div class="card case"><span class="badge">Extraterritorialidade</span><h3>Brasileira pratica fato no exterior</h3><p>A conduta é crime no Brasil, mas não é considerada crime no país onde foi praticada.</p><button class="btn soft case-btn">Ver raciocínio</button><div class="answer"><p><b>Aplicação:</b> falta dupla tipicidade, uma das condições destacadas no art. 7º, §2º. A extraterritorialidade condicionada não se completa.</p></div></div>
   </div>
+
+  <div class="sectionhead"><div><h2>Pegadinhas do tópico</h2><p>Abra cada uma.</p></div></div>
+  <div class="traplist">
+    <div class="trap"><button>“A abolitio apaga também os <span class="bad">efeitos civis</span>.” <b>＋</b></button><div class="body"><span class="bad">Errado.</span> O material separa efeitos penais e extrapenais.</div></div>
+    <div class="trap"><button>“A lei mais benéfica não alcança sentença <span class="bad">transitada em julgado</span>.” <b>＋</b></button><div class="body"><span class="bad">Errado.</span> O art. 2º, parágrafo único, é apresentado justamente para afastar essa conclusão.</div></div>
+    <div class="trap"><button>“Tempo do crime = <span class="bad">ubiquidade</span>.” <b>＋</b></button><div class="body"><span class="good">Tempo = atividade; lugar = ubiquidade.</span></div></div>
+    <div class="trap"><button>“Territorialidade significa que a lei brasileira <span class="bad">nunca</span> alcança fatos no exterior.” <b>＋</b></button><div class="body"><span class="bad">Errado.</span> O art. 7º reúne as hipóteses de extraterritorialidade.</div></div>
+    <div class="trap"><button>“Brasileiro no exterior responde no Brasil <span class="bad">só por ser brasileiro</span>.” <b>＋</b></button><div class="body">Na extraterritorialidade condicionada, o material exige o conjunto das condições do §2º. A nacionalidade, sozinha, não basta.</div></div>
+  </div>
+
+  <div class="sectionhead"><div><h2>Finalizou a teoria?</h2><p>O quiz só é liberado agora.</p></div></div>
+  <div class="card unlock"><h3>Terminei o conteúdo</h3><p>Ao liberar as questões, você fará uma por vez e ainda indicará se sabia, teve dúvida ou chutou.</p><button class="btn success" id="unlockQuiz">Terminei • liberar 5 questões</button></div>
 </section>
 
 <section id="questoes" class="section">
-  <div class="sectionhead"><div><h2>Questões do tópico</h2><p>O quiz fica bloqueado até você concluir o conteúdo.</p></div></div>
-  <div class="card unlock" id="lockedBox"><h3>Quiz ainda bloqueado</h3><p>Vá ao mapa mental e clique em “Terminei o conteúdo”.</p><button class="btn soft" data-go="mapa">Voltar ao mapa</button></div>
+  <div class="sectionhead"><div><h2>Questões finais</h2><p>Diagnóstico do que ficou da aula.</p></div></div>
+  <div class="card unlock" id="lockedBox"><h3>Questões bloqueadas</h3><p>Conclua Conteúdo → Mapa → Casos FGV e clique em “Terminei”.</p><button class="btn soft" data-go="fgv">Ir para Casos FGV</button></div>
   <div class="quizwrap" id="quizWrap">
     <div class="quizgrid">
       <div class="card quiz" id="quizBox">
@@ -219,129 +353,93 @@ button{font:inherit}.app{min-height:100vh;display:grid;grid-template-columns:260
         <div class="confidence" id="confidence"><p>Como você chegou nessa resposta?</p><div class="crow"><button data-conf="sabia">Eu sabia</button><button data-conf="duvida">Fiquei em dúvida</button><button data-conf="chute">Foi chute</button></div></div>
         <div class="qactions"><button class="btn primary" id="nextQ" disabled>Próxima questão</button></div>
       </div>
-      <aside class="card score"><div class="eyebrow">Placar</div><div class="scoregrid"><div class="scorebox"><span>Acertos</span><b id="correct">0</b></div><div class="scorebox"><span>Erros</span><b id="wrong">0</b></div><div class="scorebox"><span>Feitas</span><b id="answered">0/5</b></div><div class="scorebox"><span>Taxa</span><b id="rate">0%</b></div></div><p><b>Regra:</b> acerto no chute deve ser tratado como risco de revisão.</p></aside>
+      <aside class="card score"><div class="eyebrow">Placar</div><div class="scoregrid"><div class="scorebox"><span>Acertos</span><b id="correct">0</b></div><div class="scorebox"><span>Erros</span><b id="wrong">0</b></div><div class="scorebox"><span>Feitas</span><b id="answered">0/5</b></div><div class="scorebox"><span>Taxa</span><b id="rate">0%</b></div></div><p><b>Regra do método:</b> acerto no chute não é domínio. Dúvida é sinal de revisão.</p></aside>
     </div>
   </div>
 </section>
 
 <section id="resultado" class="section">
-  <div class="sectionhead"><div><h2>Resultado da sessão</h2><p>Seu desempenho fica aqui e pode ser enviado para o ChatGPT registrar na Central.</p></div></div>
+  <div class="sectionhead"><div><h2>Resultado da sessão</h2><p>Use este resumo para registrar o estudo na sua Central.</p></div></div>
   <div class="card result" id="result"><h3>Sessão ainda não concluída</h3><p>Finalize as 5 questões.</p></div>
 </section>
 
 </div></main></div>
 
-<nav class="mobile"><button class="active" data-section="conteudo">Conteúdo</button><button data-section="mapa">Mapa</button><button data-section="pegadinhas">FGV</button><button data-section="questoes">Quiz</button><button data-section="resultado">Fim</button></nav>
+<nav class="mobile"><button class="active" data-section="estudar">Estudar</button><button data-section="mapa">Mapa</button><button data-section="fgv">FGV</button><button data-section="questoes">Quiz</button><button data-section="resultado">Fim</button></nav>
 <div class="toast" id="toast">Salvo</div>
 
 <script>
-const KEY="oab-penal-2026-09-11-v1";
-const blank={chapters:{},map:false,unlocked:false,idx:0,answers:[null,null,null,null,null],confidence:[null,null,null,null,null],finished:false};
+const KEY="oab-penal-2026-09-11-v2";
+const blank={modules:{},map:false,unlocked:false,idx:0,answers:[null,null,null,null,null],confidence:[null,null,null,null,null],finished:false};
 let s=load();
+
 const qs=[
- {q:"Uma lei nova deixa de considerar crime determinada conduta. Qual efeito, segundo o material?",a:["A condenação continua produzindo todos os efeitos.","Cessam os efeitos penais, mas permanecem os extrapenais.","Cessam efeitos penais e extrapenais.","A lei só beneficia processos sem trânsito em julgado."],c:1,e:"A abolitio criminis faz cessar a execução e os efeitos penais da condenação. O material ressalta que os efeitos extrapenais permanecem."},
- {q:"Uma lei penal posterior favorece o agente. Ela pode ser aplicada a fato anterior já julgado definitivamente?",a:["Não, por causa da coisa julgada.","Sim, segundo o art. 2º, parágrafo único, do CP.","Somente se o Ministério Público concordar.","Somente antes do início do cumprimento da pena."],c:1,e:"Seu material destaca que a lei posterior mais benéfica se aplica aos fatos anteriores mesmo quando decididos por sentença transitada em julgado."},
- {q:"Qual teoria o Código Penal adota para definir o tempo do crime?",a:["Ubiquidade.","Resultado.","Atividade.","Territorialidade."],c:2,e:"Tempo do crime = teoria da atividade: considera-se o momento da ação ou omissão."},
- {q:"Qual teoria o Código Penal adota para definir o lugar do crime?",a:["Atividade.","Ubiquidade ou mista.","Resultado puro.","Personalidade."],c:1,e:"Lugar do crime = teoria da ubiquidade: considera a conduta e o local do resultado."},
- {q:"Em crime permanente, uma lei penal mais grave entra em vigor antes de cessar a permanência. Segundo o material e a Súmula 711, o que ocorre?",a:["A lei mais grave nunca pode ser aplicada.","Aplica-se a lei vigente apenas no início da conduta.","A lei mais grave pode ser aplicada enquanto a permanência ainda não cessou.","A lei nova só se aplica se for mais benéfica."],c:2,e:"A apostila destaca a Súmula 711 do STF: a lei mais grave aplica-se ao crime permanente ou continuado se sua vigência é anterior à cessação da permanência ou continuidade."}
+ {q:"Uma lei posterior deixa de considerar criminosa determinada conduta. Qual alternativa corresponde ao efeito indicado pela apostila?",a:["Cessam apenas as penas futuras, mas permanecem os demais efeitos penais.","Cessam execução e efeitos penais da condenação, permanecendo efeitos extrapenais.","Cessam efeitos penais e civis da condenação.","A lei só se aplica se ainda não houver trânsito em julgado."],c:1,e:"Abolitio criminis: a apostila afirma que cessam a execução e os efeitos penais, enquanto os efeitos extrapenais permanecem."},
+ {q:"Sobre a lei penal posterior mais benéfica, o material ensina que:",a:["Só se aplica a processos sem sentença.","Pode alcançar fatos anteriores, inclusive já decididos por sentença transitada em julgado.","Não retroage por respeito à coisa julgada.","Só retroage se a pena ainda não começou a ser cumprida."],c:1,e:"O art. 2º, parágrafo único, é destacado justamente para afirmar a retroatividade benéfica mesmo após trânsito em julgado."},
+ {q:"Assinale a combinação correta:",a:["Tempo = ubiquidade; lugar = atividade.","Tempo = atividade; lugar = ubiquidade.","Tempo = territorialidade; lugar = resultado.","Tempo = resultado; lugar = atividade."],c:1,e:"Macete central: TEMPO = atividade; LUGAR = ubiquidade."},
+ {q:"Na extraterritorialidade condicionada do art. 7º, II, qual requisito recebe destaque especial na questão comentada da apostila?",a:["A vítima ser brasileira.","A dupla tipicidade: o fato também ser punível no país onde ocorreu.","Haver sempre requisição do Ministro da Justiça.","O crime ter pena superior a quatro anos."],c:1,e:"A questão da brasileira no exterior é resolvida pela ausência de dupla tipicidade, uma das condições do §2º."},
+ {q:"Durante a execução de um crime permanente entra em vigor uma lei mais grave, antes de cessada a permanência. Segundo o material:",a:["A lei nova jamais se aplica por ser mais grave.","A lei nova pode ser aplicada, conforme a Súmula 711.","Aplica-se sempre a lei vigente no primeiro ato.","A solução depende apenas do local do resultado."],c:1,e:"O material aplica a Súmula 711: a lei mais grave pode incidir se vigente antes de cessar a permanência ou continuidade."}
 ];
 
-function load(){try{let r=JSON.parse(localStorage.getItem(KEY)||"{}");return Object.assign({},blank,r,{chapters:Object.assign({},blank.chapters,r.chapters||{})});}catch(e){return JSON.parse(JSON.stringify(blank));}}
+function load(){try{let r=JSON.parse(localStorage.getItem(KEY)||"{}");return Object.assign({},blank,r,{modules:Object.assign({},blank.modules,r.modules||{})});}catch(e){return JSON.parse(JSON.stringify(blank));}}
 function save(){localStorage.setItem(KEY,JSON.stringify(s));progress();}
-function toast(msg){let t=document.getElementById("toast");t.textContent=msg;t.classList.add("show");setTimeout(function(){t.classList.remove("show");},1300);}
-function show(id){document.querySelectorAll(".section").forEach(function(x){x.classList.toggle("active",x.id===id);});document.querySelectorAll("[data-section]").forEach(function(x){x.classList.toggle("active",x.dataset.section===id);});window.scrollTo({top:0,behavior:"smooth"});}
-document.querySelectorAll("[data-section]").forEach(function(b){b.onclick=function(){show(b.dataset.section);};});
-document.querySelectorAll("[data-go]").forEach(function(b){b.onclick=function(){show(b.dataset.go);};});
+function toast(msg){let t=document.getElementById("toast");t.textContent=msg;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),1300);}
+function show(id){document.querySelectorAll(".section").forEach(x=>x.classList.toggle("active",x.id===id));document.querySelectorAll("[data-section]").forEach(x=>x.classList.toggle("active",x.dataset.section===id));window.scrollTo({top:0,behavior:"smooth"});}
+document.querySelectorAll("[data-section]").forEach(b=>b.onclick=()=>show(b.dataset.section));
+document.querySelectorAll("[data-go]").forEach(b=>b.onclick=()=>show(b.dataset.go));
 
-document.querySelectorAll(".chapter").forEach(function(ch){
-  let key=ch.dataset.chapter;
-  if(s.chapters[key])ch.classList.add("done");
-  ch.querySelector(".mark").onclick=function(){
-    s.chapters[key]=!s.chapters[key];
-    ch.classList.toggle("done",!!s.chapters[key]);
-    ch.querySelector(".mark").textContent=s.chapters[key]?"✓ Lido":"Marcar lido";
-    save();
-  };
-  if(s.chapters[key])ch.querySelector(".mark").textContent="✓ Lido";
+document.querySelectorAll(".module").forEach(mod=>{
+  const key=mod.dataset.module;
+  mod.querySelector(".module-head").onclick=()=>mod.classList.toggle("open");
+  const mark=mod.querySelector(".mark-module");
+  if(s.modules[key]){mark.textContent="✓ Módulo lido";mark.classList.add("success");}
+  mark.onclick=(ev)=>{ev.stopPropagation();s.modules[key]=!s.modules[key];mark.textContent=s.modules[key]?"✓ Módulo lido":"Marcar módulo como lido";mark.classList.toggle("success",!!s.modules[key]);save();};
 });
+document.querySelectorAll(".node").forEach(n=>n.onclick=()=>n.classList.toggle("open"));
+document.querySelectorAll(".trap").forEach(t=>t.querySelector("button").onclick=()=>t.classList.toggle("open"));
+document.querySelectorAll(".case-btn").forEach(b=>b.onclick=()=>b.closest(".case").classList.toggle("open"));
+document.getElementById("markMap").onclick=()=>{s.map=true;save();toast("Mapa marcado como revisado");};
 
-document.querySelectorAll(".node").forEach(function(n){n.onclick=function(){n.classList.toggle("open");};});
-document.querySelectorAll(".trap").forEach(function(t){t.querySelector("button").onclick=function(){t.classList.toggle("open");};});
-document.getElementById("markMap").onclick=function(){s.map=true;save();toast("Mapa marcado como revisado");};
+document.getElementById("unlockQuiz").onclick=()=>{s.unlocked=true;save();toast("Questões liberadas");show("questoes");renderQuiz();};
 
-document.getElementById("unlockQuiz").onclick=function(){
-  s.unlocked=true;save();toast("Questões liberadas");show("questoes");renderQuiz();
-};
-
-function score(){let c=0;qs.forEach(function(q,i){if(s.answers[i]===q.c)c++;});let a=s.answers.filter(function(x){return x!==null;}).length;return{c:c,w:a-c,a:a,r:a?Math.round(c/a*100):0,g:s.confidence.filter(function(x){return x==="chute";}).length,d:s.confidence.filter(function(x){return x==="duvida";}).length};}
+function score(){let c=0;qs.forEach((q,i)=>{if(s.answers[i]===q.c)c++;});let a=s.answers.filter(x=>x!==null).length;return{c,w:a-c,a,r:a?Math.round(c/a*100):0,g:s.confidence.filter(x=>x==="chute").length,d:s.confidence.filter(x=>x==="duvida").length};}
 function progress(){
-  let chapters=Object.values(s.chapters).filter(Boolean).length;
-  let p=Math.round((chapters/8)*40);
+  const done=Object.values(s.modules).filter(Boolean).length;
+  let p=Math.round((done/8)*45);
   if(s.map)p+=15;
   if(s.unlocked)p+=5;
-  p+=Math.round((s.answers.filter(function(x){return x!==null;}).length/5)*35);
+  p+=Math.round((s.answers.filter(x=>x!==null).length/5)*30);
   if(s.finished)p=100;
-  document.getElementById("sidePct").textContent=p+"%";
-  document.getElementById("sideBar").style.width=p+"%";
-  document.getElementById("ringPct").textContent=p+"%";
-  document.getElementById("ring").style.setProperty("--deg",(p*3.6)+"deg");
-  document.getElementById("lockedBox").style.display=s.unlocked?"none":"block";
-  document.getElementById("quizWrap").classList.toggle("unlocked",s.unlocked);
+  sidePct.textContent=p+"%";sideBar.style.width=p+"%";ringPct.textContent=p+"%";ring.style.setProperty("--deg",(p*3.6)+"deg");
+  lockedBox.style.display=s.unlocked?"none":"block";quizWrap.classList.toggle("unlocked",s.unlocked);
+  const td=[done>=1,done>=3,done>=5,done>=8,s.finished];document.querySelectorAll(".trackstep").forEach((e,i)=>e.classList.toggle("done",td[i]));
 }
-function scoreUI(){let x=score();correct.textContent=x.c;wrong.textContent=x.w;answered.textContent=x.a+"/5";rate.textContent=x.r+"%";}
-
+function scoreUI(){const x=score();correct.textContent=x.c;wrong.textContent=x.w;answered.textContent=x.a+"/5";rate.textContent=x.r+"%";}
 function renderQuiz(){
   if(!s.unlocked){progress();return;}
   if(s.finished){quizBox.style.display="none";renderResult();return;}
   quizBox.style.display="block";
-  let i=s.idx,q=qs[i];
-  qCount.textContent="Questão "+(i+1)+" de 5";
-  qBar.style.width=((i+1)*20)+"%";
-  question.textContent=q.q;
-  options.innerHTML="";
-  q.a.forEach(function(txt,j){
-    let b=document.createElement("button");
-    b.className="option";
-    b.innerHTML='<span class="letter">'+String.fromCharCode(65+j)+'</span><span>'+txt+'</span>';
-    b.onclick=function(){answerQ(j);};
-    options.appendChild(b);
-  });
-  feedback.className="feedback";
-  confidence.className="confidence";
-  nextQ.disabled=true;
-  if(s.answers[i]!==null)paint();
-  scoreUI();
+  const i=s.idx,q=qs[i];qCount.textContent="Questão "+(i+1)+" de 5";qBar.style.width=((i+1)*20)+"%";question.textContent=q.q;options.innerHTML="";
+  q.a.forEach((txt,j)=>{const b=document.createElement("button");b.className="option";b.innerHTML='<span class="letter">'+String.fromCharCode(65+j)+'</span><span>'+txt+'</span>';b.onclick=()=>answerQ(j);options.appendChild(b);});
+  feedback.className="feedback";confidence.className="confidence";nextQ.disabled=true;if(s.answers[i]!==null)paint();scoreUI();
 }
 function answerQ(j){if(s.answers[s.idx]!==null)return;s.answers[s.idx]=j;save();paint();scoreUI();}
 function paint(){
-  let i=s.idx,q=qs[i],saved=s.answers[i],bs=[].slice.call(document.querySelectorAll(".option"));
-  bs.forEach(function(b,j){b.disabled=true;if(j===q.c)b.classList.add("correct");if(j===saved&&saved!==q.c)b.classList.add("wrong");});
-  let ok=saved===q.c;
-  feedback.className="feedback show "+(ok?"ok":"no");
-  feedback.innerHTML="<b>"+(ok?"✓ Correto":"✕ Atenção")+"</b><br>"+q.e;
-  confidence.classList.add("show");
-  document.querySelectorAll("[data-conf]").forEach(function(b){b.classList.toggle("sel",b.dataset.conf===s.confidence[i]);});
-  nextQ.disabled=s.confidence[i]===null;
+  const i=s.idx,q=qs[i],saved=s.answers[i],bs=[...document.querySelectorAll(".option")];
+  bs.forEach((b,j)=>{b.disabled=true;if(j===q.c)b.classList.add("correct");if(j===saved&&saved!==q.c)b.classList.add("wrong");});
+  const ok=saved===q.c;feedback.className="feedback show "+(ok?"ok":"no");feedback.innerHTML="<b>"+(ok?"✓ Correto":"✕ Atenção")+"</b><br>"+q.e;confidence.classList.add("show");
+  document.querySelectorAll("[data-conf]").forEach(b=>b.classList.toggle("sel",b.dataset.conf===s.confidence[i]));nextQ.disabled=s.confidence[i]===null;
 }
-document.querySelectorAll("[data-conf]").forEach(function(b){
-  b.onclick=function(){s.confidence[s.idx]=b.dataset.conf;save();paint();};
-});
-nextQ.onclick=function(){
-  if(s.confidence[s.idx]===null)return;
-  if(s.idx<4){s.idx++;save();renderQuiz();}
-  else{s.finished=true;save();renderResult();show("resultado");}
-};
+document.querySelectorAll("[data-conf]").forEach(b=>b.onclick=()=>{s.confidence[s.idx]=b.dataset.conf;save();paint();});
+nextQ.onclick=()=>{if(s.confidence[s.idx]===null)return;if(s.idx<4){s.idx++;save();renderQuiz();}else{s.finished=true;save();renderResult();show("resultado");}};
 function renderResult(){
-  let box=document.getElementById("result");
-  if(!s.finished){box.classList.remove("show");return;}
-  let x=score();
-  box.className="card result show";
-  box.innerHTML='<h3>Sessão concluída</h3><p>Use este resultado para registrar o estudo na sua Central.</p><div class="resultcards"><div><b>'+x.c+'</b><span>acertos</span></div><div><b>'+x.w+'</b><span>erros</span></div><div><b>'+x.g+'</b><span>chutes</span></div><div><b>'+x.r+'%</b><span>taxa</span></div></div><button class="btn primary" id="copyResult">Copiar resultado para o ChatGPT</button>';
+  const box=document.getElementById("result");if(!s.finished)return;
+  const x=score();box.innerHTML='<h3>Sessão concluída</h3><p>O resultado abaixo pode ser enviado para o ChatGPT registrar na Central.</p><div class="resultcards"><div><b>'+x.c+'</b><span>acertos</span></div><div><b>'+x.w+'</b><span>erros</span></div><div><b>'+x.g+'</b><span>chutes</span></div><div><b>'+x.r+'%</b><span>taxa</span></div></div><button class="btn primary" id="copyResult">Copiar resultado para o ChatGPT</button>';
   document.getElementById("copyResult").onclick=copyResult;
 }
 async function copyResult(){
-  let x=score(),miss=qs.map(function(q,i){return s.answers[i]!==q.c?i+1:null;}).filter(Boolean);
-  let txt="RESULTADO OAB • 11/09/2026\nMatéria: Direito Penal\nTópico: Lei penal no tempo e no espaço: abolitio, retroatividade, territorialidade\nQuestões: 5\nAcertos: "+x.c+"\nErros: "+x.w+"\nTaxa: "+x.r+"%\nChutes: "+x.g+"\nDúvidas: "+x.d+"\nQuestões erradas: "+(miss.length?miss.join(", "):"nenhuma")+"\nRegistrar na minha Central e conduzir a revisão.";
+  const x=score(),miss=qs.map((q,i)=>s.answers[i]!==q.c?i+1:null).filter(Boolean);
+  const txt="RESULTADO OAB • 11/09/2026\nMatéria: Direito Penal\nTópico: Lei penal no tempo e no espaço: abolitio, retroatividade, territorialidade\nQuestões: 5\nAcertos: "+x.c+"\nErros: "+x.w+"\nTaxa: "+x.r+"%\nChutes: "+x.g+"\nDúvidas: "+x.d+"\nQuestões erradas: "+(miss.length?miss.join(", "):"nenhuma")+"\nRegistrar na minha Central e conduzir a revisão.";
   try{await navigator.clipboard.writeText(txt);toast("Resultado copiado");}catch(e){prompt("Copie o resultado:",txt);}
 }
 progress();renderQuiz();renderResult();
