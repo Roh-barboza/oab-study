@@ -70,7 +70,7 @@ button{font:inherit}.app{min-height:100vh;display:grid;grid-template-columns:265
     <button class="active" data-section="inicio"><span class="dot"></span>Início</button>
     <button data-section="materias"><span class="dot"></span>Matérias</button>
     <button data-section="mapageral"><span class="dot"></span>Mapa geral</button>
-    <button data-section="estudar"><span class="dot"></span>Aula de hoje</button>
+    <button id="navTodayMap"><span class="dot"></span>Mapa de hoje</button>
     <button data-section="questoes"><span class="dot"></span>Questões</button>
     <button data-section="resultado"><span class="dot"></span>Resultado</button>
   </nav>
@@ -110,7 +110,7 @@ button{font:inherit}.app{min-height:100vh;display:grid;grid-template-columns:265
       <h3>Processo Penal</h3>
       <p><b>Princípios + aplicação da lei processual + inquérito policial.</b></p>
       <p>Meta: 5 questões • Fase 1 • sessão normal</p>
-      <button class="btn primary" data-go="estudar">Continuar aula de hoje</button>
+      <button class="btn primary" id="homeTodayMap">Abrir mapa de Processo Penal</button>
     </div>
   </div>
   <div class="sectionhead"><div><h2>Módulos da preparação</h2><p>Cores diferentes para você localizar a área antes mesmo de ler.</p></div></div>
@@ -434,7 +434,7 @@ button{font:inherit}.app{min-height:100vh;display:grid;grid-template-columns:265
 
 </div></main></div>
 
-<nav class="mobile"><button class="active" data-section="inicio">Início</button><button data-section="materias">Matérias</button><button data-section="mapageral">Mapa</button><button data-section="estudar">Hoje</button><button data-section="questoes">Quiz</button></nav>
+<nav class="mobile"><button class="active" data-section="inicio">Início</button><button data-section="materias">Matérias</button><button data-section="mapageral">Mapa</button><button id="mobileTodayMap">Hoje</button><button data-section="questoes">Quiz</button></nav>
 <div class="toast" id="toast">Salvo</div>
 
 <script>
@@ -572,7 +572,7 @@ function openSubject(name){
    if(b.dataset.mapAct==="fit")subjectMapZoom=1;
    setSubjectZoom();
  });
- const go=document.getElementById("goToday");if(go)go.onclick=()=>show("estudar");
+ const go=document.getElementById("goToday");if(go)go.onclick=()=>subjectTab('conteudo',su);
  d.scrollIntoView({behavior:"smooth",block:"start"});
 }
 function renderGlobalMap(){
@@ -584,6 +584,13 @@ function renderGlobalMap(){
  g.querySelectorAll("[data-map-sub]").forEach(b=>b.onclick=()=>{show("materias");openSubject(b.dataset.mapSub);});
 }
 renderModuleTabs();renderSubjects();renderGlobalMap();
+function openTodayMap(){
+ show("materias");
+ activeModule="penal";renderModuleTabs();renderSubjects();
+ setTimeout(()=>openSubject("Processo Penal"),80);
+}
+["navTodayMap","mobileTodayMap","homeTodayMap"].forEach(id=>{const el=document.getElementById(id);if(el)el.onclick=openTodayMap;});
+
 
 const qs=[
  {q:"Uma lei posterior deixa de considerar criminosa determinada conduta. Qual alternativa corresponde ao efeito indicado pela apostila?",a:["Cessam apenas as penas futuras, mas permanecem os demais efeitos penais.","Cessam execução e efeitos penais da condenação, permanecendo efeitos extrapenais.","Cessam efeitos penais e civis da condenação.","A lei só se aplica se ainda não houver trânsito em julgado."],c:1,e:"Abolitio criminis: a apostila afirma que cessam a execução e os efeitos penais, enquanto os efeitos extrapenais permanecem."},
